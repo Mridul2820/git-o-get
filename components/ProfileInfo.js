@@ -24,7 +24,7 @@ const ProfileInfo = ({ user }) => {
                         <a 
                             href={user.url}
                             target="_blank"
-                            rel='norefarer'
+                            rel="noreferrer"
                         >
                             {'@'}{user.login}
                         </a>
@@ -66,7 +66,7 @@ const ProfileInfo = ({ user }) => {
                     <a 
                         href={`https://twitter.com/${user.twitterUsername}`}
                         target="_blank"
-                        rel='norefarer'
+                        rel="noreferrer"
                         className="flex items-center gap-1 mt-2"
                     >
                         <AiOutlineTwitter size={20} />
@@ -79,7 +79,7 @@ const ProfileInfo = ({ user }) => {
                     <a 
                         href={user.websiteUrl}
                         target="_blank"
-                        rel='norefarer'
+                        rel="noreferrer"
                         className="flex items-center gap-1 mt-2"
                     >
                         <BsLink45Deg size={22} />
