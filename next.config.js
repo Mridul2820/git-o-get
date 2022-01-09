@@ -13,10 +13,7 @@ module.exports = {
         ],
         domains: [
             'localhost', 
-            'res.cloudinary.com',
-            'inneedstore.com',
-            'i0.wp.com',
-            'images.pexels.com'
+            'avatars.githubusercontent.com'
         ]
     },
 
