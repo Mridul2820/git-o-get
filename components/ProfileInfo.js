@@ -5,6 +5,7 @@ import { BiBuildings } from 'react-icons/bi'
 import { IoLocationOutline } from 'react-icons/io5'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { BsLink45Deg } from 'react-icons/bs'
+import { HiOutlineMail } from 'react-icons/hi'
 
 const ProfileInfo = ({ user }) => {
     console.log(user)
@@ -53,6 +54,12 @@ const ProfileInfo = ({ user }) => {
                     <div className="flex items-center gap-1 mt-2">
                         <IoLocationOutline size={20} />
                         {user.location}
+                    </div>
+                }
+                {user.email &&
+                    <div className="flex items-center gap-1 mt-2">
+                        <HiOutlineMail size={20} />
+                        {user.email}
                     </div>
                 }
                 {user.twitterUsername &&
