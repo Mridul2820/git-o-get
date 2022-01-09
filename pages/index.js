@@ -16,7 +16,7 @@ const Home = () => {
     const user = data.user
 
     return (
-        <div className='font-bold'>
+        <div>
             <ProfileInfo 
                 user={user}
             />

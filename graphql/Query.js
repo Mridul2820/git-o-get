@@ -11,6 +11,7 @@ export const GET_USER = gql `
             websiteUrl
             location
             company
+            twitterUsername
             following {
                 totalCount
             }
