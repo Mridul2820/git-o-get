@@ -5,12 +5,18 @@ import '../styles/globals.css'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 
+// apollo
+import { ApolloProvider } from '@apollo/client'
+import { client } from '../client'
+
 function MyApp({ Component, pageProps }) {
     return (
-        <RecoilRoot>
-            <DefaultSeo {...SEO} />
-            <Component {...pageProps} />
-        </RecoilRoot>
+        <ApolloProvider client={client}>
+            <RecoilRoot>
+                <DefaultSeo {...SEO} />
+                <Component {...pageProps} />
+            </RecoilRoot>
+        </ApolloProvider>
     )
 }
 
