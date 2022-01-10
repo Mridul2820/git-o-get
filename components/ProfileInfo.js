@@ -10,7 +10,7 @@ import { HiOutlineMail } from 'react-icons/hi'
 const ProfileInfo = ({ user }) => {
     console.log(user)
     return (
-        <div className='py-10 px-8 max-w-[380px]'>
+        <div className='py-4 px-5 max-w-[380px] shadow-bs1 rounded-md'>
             <div className="flex items-center gap-3">
                 <Image 
                     src={user.avatarUrl}
@@ -59,34 +59,39 @@ const ProfileInfo = ({ user }) => {
                 {user.email &&
                     <div className="flex items-center gap-1 mt-2">
                         <HiOutlineMail size={20} />
-                        {user.email}
+                        <a 
+                            href={`mailto:${user.email}`}
+                            className="hover:underline hover:text-gray-800"
+                        >
+                            {user.email}
+                        </a>
                     </div>
                 }
                 {user.twitterUsername &&
-                    <a 
-                        href={`https://twitter.com/${user.twitterUsername}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1 mt-2"
-                    >
+                    <div className="flex items-center gap-1 mt-2">
                         <AiOutlineTwitter size={20} />
-                        <span className="hover:underline hover:text-[#0969da]">
+                        <a 
+                            href={`https://twitter.com/${user.twitterUsername}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:underline hover:text-gray-800"
+                        >
                             {'@'}{user.twitterUsername}
-                        </span>
-                    </a>
+                        </a>
+                    </div>
                 }
                 {user.websiteUrl && 
-                    <a 
-                        href={user.websiteUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1 mt-2"
-                    >
+                    <div className="flex items-center gap-1 mt-2">
                         <BsLink45Deg size={22} />
-                        <span className='hover:underline hover:text-[#0969da]'>
+                        <a 
+                            href={`https://${user.websiteUrl}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:underline hover:text-gray-800"
+                        >
                             {user.websiteUrl}
-                        </span>
-                    </a>
+                        </a>
+                    </div>
                 }
             </div>
         </div>

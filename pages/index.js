@@ -6,7 +6,7 @@ import ProfileInfo from '../components/ProfileInfo';
 const Home = () => {
     const { loading, error, data } = useQuery(GET_USER, {
         variables: {
-            username: 'mridul2820',
+            username: 'Mridul2820',
         },
     });
 
@@ -16,7 +16,7 @@ const Home = () => {
     const user = data.user
 
     return (
-        <div>
+        <div className='py-10 px-5'>
             <ProfileInfo 
                 user={user}
             />
