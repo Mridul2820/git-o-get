@@ -34,9 +34,17 @@ module.exports = {
                 'light-blue': 'linear-gradient(180deg,rgb(233, 244, 254),rgba(233, 244, 254, .99) 25%, rgba(255, 255, 255, 0))'
             },
             backgroundColor: {
-                'slate-light': 'rgba(75, 85, 99, .5)',
-                'custom-blue': 'rgb(56, 159, 255)'
-            }
+                'purple-black': 'rgb(58, 53, 111)',
+                'purple-dark': 'rgb(86, 76, 137)',
+                'purple-mid': 'rgb(154, 101, 253)',
+                'purple-lite': 'rgb(170, 153, 255)'
+            },
+            color: {
+                'purple-black': 'rgb(58, 53, 111)',
+                'purple-dark': 'rgb(86, 76, 137)',
+                'purple-mid': 'rgb(154, 101, 253)',
+                'purple-lite': 'rgb(170, 153, 255)'
+            },
         },
     },
     plugins: [

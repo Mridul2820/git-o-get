@@ -9,11 +9,14 @@ import SEO from '../next-seo.config'
 import { ApolloProvider } from '@apollo/client'
 import { client } from '../client'
 
+import Navbar from '../components/nav/Navbar'
+
 function MyApp({ Component, pageProps }) {
     return (
         <ApolloProvider client={client}>
             <RecoilRoot>
                 <DefaultSeo {...SEO} />
+                <Navbar />
                 <Component {...pageProps} />
             </RecoilRoot>
         </ApolloProvider>

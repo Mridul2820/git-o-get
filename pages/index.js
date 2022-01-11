@@ -19,7 +19,7 @@ const Home = () => {
     const user = data.user
 
     return (
-        <div className='py-10 px-5 h-screen'>
+        <div className='py-5 px-5 h-screen'>
             <ProfileInfo 
                 user={user}
             />

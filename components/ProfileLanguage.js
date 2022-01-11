@@ -99,7 +99,7 @@ const ProfileLanguage = ({ repositories }) => {
     }
 
     return (
-        <div className='p-3 max-w-[380px] shadow-bs1 rounded-md mt-5 h-72 w-96'>
+        <div className='p-3 max-w-[380px] shadow-bs1 rounded-md mt-5 h-64 w-96'>
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart width={300} height={500}>
                     <Pie
