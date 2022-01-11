@@ -8,7 +8,6 @@ import { BsLink45Deg } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
 const ProfileInfo = ({ user }) => {
-    console.log(user)
     return (
         <div className='py-4 px-5 max-w-[380px] shadow-bs1 rounded-md'>
             <div className="flex items-center gap-3">

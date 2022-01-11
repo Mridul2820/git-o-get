@@ -19,6 +19,19 @@ export const GET_USER = gql `
             followers {
                 totalCount
             }
+            repositories(orderBy: {field: UPDATED_AT, direction: DESC}, ownerAffiliations: OWNER, privacy:PUBLIC, isFork: false, first: 100){
+                nodes {
+                    languages(first: 20) {
+                        edges{
+                            size
+                            node {
+                                name
+                                color
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 `;
