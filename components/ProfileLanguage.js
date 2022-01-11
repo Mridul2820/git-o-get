@@ -1,6 +1,6 @@
 import { sumBy } from 'lodash';
 import React, { useState } from 'react'
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
 const ProfileLanguage = ({ repositories }) => {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -29,7 +29,7 @@ const ProfileLanguage = ({ repositories }) => {
 
     const formatLangs = []
 
-    if(allLangs.length > 5){
+    if(allLangs.length >= 5){
         const mainLangs = allLangs.slice(0, 4)
 
         const sum_of_other = sumBy(allLangs.slice(4), 'size')
@@ -80,8 +80,26 @@ const ProfileLanguage = ({ repositories }) => {
         return null;
     };
 
+    const renderLegend = ({ payload }) => {
+        return (
+            <ul>
+            {payload?.map((entry, index) => (
+                <li key={`item-${index}`} className='flex items-center gap-2'>
+                    <div 
+                        className='h-3 w-3'
+                        style={{ background: entry.color}}
+                    />
+                    <span className='text-sm select-none'>
+                        {entry.value}
+                    </span>
+                </li>
+            ))}
+            </ul>
+        );
+    }
+
     return (
-        <div className='py-4 px-5 max-w-[380px] shadow-bs1 rounded-md mt-5 h-72 w-96'>
+        <div className='p-3 max-w-[380px] shadow-bs1 rounded-md mt-5 h-72 w-96'>
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart width={300} height={500}>
                     <Pie
@@ -105,6 +123,13 @@ const ProfileLanguage = ({ repositories }) => {
                     <Tooltip 
                         content={<CustomTooltip />}
                         isAnimationActive={true}
+                    />
+                    <Legend 
+                        iconSize={10} 
+                        layout='vertical' 
+                        verticalAlign='top' 
+                        align="right"
+                        content={renderLegend}
                     />
                 </PieChart>
             </ResponsiveContainer>
