@@ -6,13 +6,13 @@ export default {
         locale: 'en_IN',
         url: 'mrx.com',
         site_name: 'Get Your git',
-        // images: [
-        //     {
-        //         url: "https://res.cloudinary.com/sportzhut/image/upload/v1627916090/logo_d80ajt.png",
-        //         width: 300,
-        //         height: 300,
-        //         alt: "Get Your git",
-        //     }
-        // ],
+        images: [
+            {
+                url: "https://res.cloudinary.com/dbxcernxw/image/upload/v1641915729/app_logos/logo_mty5eq.png",
+                width: 300,
+                height: 300,
+                alt: "Get Your git",
+            }
+        ],
     }
 };
