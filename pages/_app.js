@@ -10,6 +10,7 @@ import { ApolloProvider } from '@apollo/client'
 import { client } from '../client'
 
 import Navbar from '../components/nav/Navbar'
+import Footer from '../components/footer/Footer'
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
                 <DefaultSeo {...SEO} />
                 <Navbar />
                 <Component {...pageProps} />
+                <Footer />
             </RecoilRoot>
         </ApolloProvider>
     )
