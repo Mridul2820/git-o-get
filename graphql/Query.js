@@ -20,6 +20,7 @@ export const GET_USER = gql `
                 totalCount
             }
             repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100){
+                totalCount
                 nodes {
                     languages(first: 20) {
                         edges{
@@ -31,6 +32,9 @@ export const GET_USER = gql `
                         }
                     }
                 }
+            }
+            gists(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100){
+                totalCount
             }
         }
     }
