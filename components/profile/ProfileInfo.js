@@ -9,7 +9,7 @@ import { HiOutlineMail } from 'react-icons/hi'
 
 const ProfileInfo = ({ user }) => {
     return (
-        <div className='py-4 px-5 max-w-[380px] shadow-bs1 rounded-md'>
+        <div className='py-4 px-5 shadow-bs1 rounded-md max-w-[420px] w-full'>
             <div className="flex items-center gap-3">
                 <Image 
                     src={user.avatarUrl}

@@ -80,28 +80,35 @@ const ProfileLanguage = ({ repositories }) => {
         return null;
     };
 
-    const renderLegend = ({ payload }) => {
+    const RenderLegend = () => {
         return (
-            <ul>
-            {payload?.map((entry, index) => (
-                <li key={`item-${index}`} className='flex items-center gap-2'>
-                    <div 
-                        className='h-3 w-3'
-                        style={{ background: entry.color}}
-                    />
-                    <span className='text-sm select-none'>
-                        {entry.value}
-                    </span>
-                </li>
-            ))}
-            </ul>
+            <div className="flex justify-center mb-2">
+                <ul className='mx-auto'>
+                {formatLangs?.map((entry, index) => (
+                    <li key={`item-${index}`} className='flex items-center gap-2'>
+                        <div 
+                            className='h-3 w-3'
+                            style={{ background: entry.color}}
+                        />
+                        <span className='text-sm select-none'>
+                            {entry.name}
+                        </span>
+                        <span>
+                            {(entry.size * 100/(sum_of_all_values)).toFixed(2) + '%'}
+                        </span>
+                    </li>
+                ))}
+                </ul>
+            </div>
         );
     }
 
     return (
-        <div className='p-3 max-w-[380px] shadow-bs1 rounded-md mt-5 h-64 w-96'>
-            <ResponsiveContainer width="100%" height="100%">
-                <PieChart width={300} height={500}>
+        <div className='p-3 shadow-bs1 rounded-md min-h-[400px] max-w-[420px] w-full'>
+            <p className='text-center mb-3 text-xl font-semibold'>Language with most lines</p>
+            <RenderLegend />
+            <ResponsiveContainer width="100%" height={250}>
+                <PieChart width={280} height={500}>
                     <Pie
                         data={formatLangs}
                         dataKey="size"
@@ -123,13 +130,6 @@ const ProfileLanguage = ({ repositories }) => {
                     <Tooltip 
                         content={<CustomTooltip />}
                         isAnimationActive={true}
-                    />
-                    <Legend 
-                        iconSize={10} 
-                        layout='vertical' 
-                        verticalAlign='top' 
-                        align="right"
-                        content={renderLegend}
                     />
                 </PieChart>
             </ResponsiveContainer>

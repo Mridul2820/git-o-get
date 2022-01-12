@@ -11,13 +11,15 @@ const ProfileLanguage = dynamic(() => import('../../components/profile/ProfileLa
 const UserName = ({ user }) => {
 
     return (
-        <div className='py-5 px-5 min-h-[calc(100vh-68px)]'>
-            <ProfileInfo 
-                user={user}
-            />
-            <ProfileLanguage 
-                repositories={user.repositories.nodes}
-            />
+        <div className='py-5 min-h-[calc(100vh-68px)]'>
+            <div className="px-5 w-full flex gap-5 flex-col">
+                <ProfileInfo 
+                    user={user}
+                />
+                <ProfileLanguage 
+                    repositories={user.repositories.nodes}
+                />
+            </div>
         </div>
     )
 }
