@@ -6,7 +6,7 @@ import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
 
 const ProfileInfo = dynamic(() => import('../../components/profile/ProfileInfo'));
-const ProfileLanguage = dynamic(() => import('../../components/profile/ProfileLanguage'));
+const LanguagePie = dynamic(() => import('../../components/graphs/LanguagePie'));
 const ProfileNums = dynamic(() => import('../../components/profile/ProfileNums'));
 const ProfileCalendar = dynamic(() => import('../../components/profile/ProfileCalendar'));
 
@@ -27,7 +27,7 @@ const UserName = ({ user }) => {
 
             </div>
             <div className="h-full w-full flex flex-col gap-5">
-                <ProfileLanguage 
+                <LanguagePie 
                     repositories={user.repositories.nodes}
                 />
                 <ProfileCalendar username={user.login} />

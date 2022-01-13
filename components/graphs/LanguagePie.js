@@ -2,7 +2,7 @@ import { sumBy } from 'lodash';
 import React, { useState } from 'react'
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
-const ProfileLanguage = ({ repositories }) => {
+const LanguagePie = ({ repositories }) => {
     const [activeIndex, setActiveIndex] = useState(0)
 
     const onPieEnter = index => {
@@ -137,4 +137,4 @@ const ProfileLanguage = ({ repositories }) => {
     )
 }
 
-export default ProfileLanguage
+export default LanguagePie
