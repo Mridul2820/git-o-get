@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='flex justify-between items-center gap-3 px-5 py-4 '>
+        <nav className='flex justify-between items-center gap-3 px-5 py-4 bg-white'>
             <div className="flex justify-between max-w-[420px] w-full">
                 <Link href="/">
                     <a className='h-9 w-9'>

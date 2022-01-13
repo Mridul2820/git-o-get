@@ -20,7 +20,7 @@ const MostStar = ({ repos }) => {
     console.log(sortByFork)
 
     return (
-        <div className='p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full'>
+        <div className='p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full bg-white'>
             <p className='text-center mb-5 text-xl font-semibold'>Most Stared Repositories</p>
             <ResponsiveContainer width="100%" height={420}>
                 <BarChart

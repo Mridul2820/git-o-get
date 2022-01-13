@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const ProfileCalendar = ({ username }) => {
     return (
-        <CalenderWrap className='flex flex-col gap-3 items-center p-3 shadow-bs1 rounded-md w-full'>
+        <CalenderWrap className='flex flex-col gap-3 items-center p-3 shadow-bs1 rounded-md w-full bg-white'>
             <p className="font-bold">
                 <a href={`https://github.com/${username}`}>{'@' + username}</a> on GitHub
             </p>

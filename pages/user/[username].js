@@ -18,7 +18,7 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 const UserName = ({ user }) => {
 
     return (
-        <div className="p-5">
+        <div className="px-5 py-10">
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 <div className="w-full flex gap-5 flex-col">
                     <ProfileInfo 

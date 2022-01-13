@@ -36,7 +36,7 @@ const ProfileNums = ({ followers, following, total_repos, total_gists }) => {
     ];
 
     return (
-        <div className='shadow-bs1 rounded-md w-full'>
+        <div className='shadow-bs1 rounded-md w-full bg-white'>
             <div className="p-5 grid grid-cols-2 gap-5">
                 {items.map((item) => (
                     <div key={item.id} className="px-5 py-3 flex flex-col justify-between items-center rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300">
