@@ -16,6 +16,7 @@ const ProfileInfo = ({ user }) => {
                     height={80}
                     width={80}
                     className='rounded-full'
+                    priority={true}
                 />
                 <div className="">
                     <h1 className='text-2xl font-bold'>

@@ -39,7 +39,7 @@ const ProfileNums = ({ followers, following, total_repos, total_gists }) => {
         <div className='shadow-bs1 rounded-md w-full'>
             <div className="p-5 grid grid-cols-2 gap-5">
                 {items.map((item) => (
-                    <div key={item.id} className="px-5 py-3 flex flex-col justify-between items-center shadow-bs5">
+                    <div key={item.id} className="px-5 py-3 flex flex-col justify-between items-center rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300">
                         <Icon className={item.color}>{item.icon}</Icon>
                         <p className='text-2xl font-bold mt-2 -mb-1'>{item.value}</p>
                         <p className="text-gray-600">{item.label}</p>

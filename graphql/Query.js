@@ -16,8 +16,15 @@ export const GET_USER = gql `
             following {
                 totalCount
             }
-            followers {
+            followers(last: 100) {
                 totalCount
+                nodes {
+                    avatarUrl
+                    name
+                    id
+                    login
+                    url
+                }
             }
             repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100){
                 totalCount
