@@ -15,7 +15,7 @@ const Home = () => {
                         className='w-full max-w-[500px] mx-auto'
                     />
                 </div>
-                <div className="flex flex-col items-center justify-center gap-4 p-5 shadow-bs3 hover:shadow-bs2 border-2 border-slate-400 rounded-md w-[50%] h-full">
+                <div className="flex flex-col items-center justify-center gap-4 p-5 shadow-bs3 hover:shadow-bs2 border-2 border-slate-400 rounded-md w-[50%] h-full bg-white">
                     <div className="p-3 w-16 h-16 rounded-full shadow-bs2 border-2 border-slate-400">
                         <img 
                             src="/logo.png" 
@@ -32,6 +32,7 @@ const Home = () => {
                         <li>Fork Graph</li>
                         <li>Earned Star Graph</li>
                         <li>Latest Follower List</li>
+                        <li>Profile Card</li>
                     </ul>
                 </div>
             </div>

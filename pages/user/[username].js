@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic';
 import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
 
+const Navbar = dynamic(() => import('../../components/nav/Navbar'));
+
 const ProfileInfo = dynamic(() => import('../../components/profile/ProfileInfo'));
 const ProfileNums = dynamic(() => import('../../components/profile/ProfileNums'));
 const ProfileFollowers = dynamic(() => import('../../components/profile/ProfileFollowers'));

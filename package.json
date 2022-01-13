@@ -1,5 +1,5 @@
 {
-  "name": "git-to-get",
+  "name": "git-o-get",
   "private": true,
   "scripts": {
     "dev": "next dev",
