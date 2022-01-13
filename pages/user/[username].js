@@ -8,11 +8,12 @@ import { client } from '../../client';
 const ProfileInfo = dynamic(() => import('../../components/profile/ProfileInfo'));
 const ProfileLanguage = dynamic(() => import('../../components/profile/ProfileLanguage'));
 const ProfileNums = dynamic(() => import('../../components/profile/ProfileNums'));
+const ProfileCalendar = dynamic(() => import('../../components/profile/ProfileCalendar'));
 
 const UserName = ({ user }) => {
 
     return (
-        <div className='flex flex-col md:flex-row gap-5 justify-start p-5 min-h-[calc(100vh-68px)]'>
+        <div className='flex flex-col md:flex-row gap-5 justify-start p-5'>
             <div className="max-w-[420px] w-full flex gap-5 flex-col">
                 <ProfileInfo 
                     user={user}
@@ -25,9 +26,12 @@ const UserName = ({ user }) => {
                 />
 
             </div>
-            <ProfileLanguage 
-                repositories={user.repositories.nodes}
-            />
+            <div className="h-full w-full flex flex-col gap-5">
+                <ProfileLanguage 
+                    repositories={user.repositories.nodes}
+                />
+                <ProfileCalendar username={user.login} />
+            </div>
         </div>
     )
 }

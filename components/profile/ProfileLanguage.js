@@ -104,7 +104,7 @@ const ProfileLanguage = ({ repositories }) => {
     }
 
     return (
-        <div className='p-3 shadow-bs1 rounded-md h-full min-h-[400px] max-w-[420px] w-full'>
+        <div className='p-3 pb-0 shadow-bs1 rounded-md h-full min-h-[400px] max-w-[380px]'>
             <p className='text-center mb-3 text-xl font-semibold'>Language Card</p>
             <RenderLegend />
             <ResponsiveContainer width="100%" height={250}>
