@@ -22,6 +22,10 @@ export const GET_USER = gql `
             repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100){
                 totalCount
                 nodes {
+                    name
+                    url
+                    stargazerCount
+                    forkCount
                     languages(first: 20) {
                         edges{
                             size

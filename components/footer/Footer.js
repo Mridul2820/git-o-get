@@ -16,7 +16,7 @@ const Footer = () => {
             Made with ❤ {'& '}
             <a 
                 className='ml-1 font-semibold' 
-                href="https://github.com/Mridul2820/crypto-check"
+                href="https://github.com/Mridul2820/git-to-get"
                 target='_blank'
                 rel='noreferrer'
             >
