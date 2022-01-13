@@ -1,20 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import { FaSearch } from 'react-icons/fa'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Search from '../reuse/Search'
 
 const Navbar = () => {
-    const router = useRouter()
-
-    const  handleOnSubmit = (event) => {
-        event.preventDefault();
-    
-        const fields = Array.from(event.currentTarget.elements);
-        const username = fields.find(field => field.name === 'username')?.value;
-    
-        router.push(`/user/${username}`);
-    }
 
     return (
         <nav className='flex justify-between items-center gap-3 px-5 py-4 bg-white'>
@@ -30,18 +19,7 @@ const Navbar = () => {
                         />
                     </a>
                 </Link>
-
-                <form className="flex items-center" onSubmit={handleOnSubmit}>
-                    <input 
-                        type="text" 
-                        name="username" 
-                        placeholder='username'
-                        className='px-2 outline-none h-9 border-2 border-purple-400 rounded-l-md focus:shadow-bs3'
-                    />
-                    <button className='bg-purple-mid text-white h-9 px-2 rounded-r-md'>
-                        <FaSearch />
-                    </button>
-                </form>
+                <Search />
             </div>
         </nav>
     )
