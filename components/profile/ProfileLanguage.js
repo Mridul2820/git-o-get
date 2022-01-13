@@ -104,8 +104,8 @@ const ProfileLanguage = ({ repositories }) => {
     }
 
     return (
-        <div className='p-3 shadow-bs1 rounded-md min-h-[400px] max-w-[420px] w-full'>
-            <p className='text-center mb-3 text-xl font-semibold'>Language with Size</p>
+        <div className='p-3 shadow-bs1 rounded-md h-full min-h-[400px] max-w-[420px] w-full'>
+            <p className='text-center mb-3 text-xl font-semibold'>Language Card</p>
             <RenderLegend />
             <ResponsiveContainer width="100%" height={250}>
                 <PieChart width={280} height={500}>

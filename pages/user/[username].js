@@ -12,20 +12,21 @@ const ProfileNums = dynamic(() => import('../../components/profile/ProfileNums')
 const UserName = ({ user }) => {
 
     return (
-        <div className='flex gap-5 justify-start p-5 min-h-[calc(100vh-68px)]'>
+        <div className='flex flex-col md:flex-row gap-5 justify-start p-5 min-h-[calc(100vh-68px)]'>
             <div className="max-w-[420px] w-full flex gap-5 flex-col">
                 <ProfileInfo 
                     user={user}
                 />
-                <ProfileLanguage 
-                    repositories={user.repositories.nodes}
+                <ProfileNums 
+                    followers={user.followers.totalCount}
+                    following={user.following.totalCount}
+                    total_repos={user.repositories.totalCount}
+                    total_gists={user.gists.totalCount}
                 />
+
             </div>
-            <ProfileNums 
-                followers={user.followers.totalCount}
-                following={user.following.totalCount}
-                total_repos={user.repositories.totalCount}
-                total_gists={user.gists.totalCount}
+            <ProfileLanguage 
+                repositories={user.repositories.nodes}
             />
         </div>
     )
