@@ -11,13 +11,14 @@ const ProfileCalendar = dynamic(() => import('../../components/profile/ProfileCa
 
 const LanguagePie = dynamic(() => import('../../components/graphs/LanguagePie'));
 const MostForked = dynamic(() => import('../../components/graphs/MostForked'));
+const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 
 const UserName = ({ user }) => {
 
     return (
         <div className="p-5">
-            <div className='flex flex-col md:flex-row gap-5 justify-start'>
-                <div className="max-w-[420px] w-full flex gap-5 flex-col">
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                <div className="w-full flex gap-5 flex-col">
                     <ProfileInfo 
                         user={user}
                     />
@@ -28,15 +29,16 @@ const UserName = ({ user }) => {
                         total_gists={user.gists.totalCount}
                     />
                 </div>
-                <div className="h-full w-full flex flex-col gap-5">
+                <div className="h-full w-full flex flex-col gap-5 col-span-1 lg:col-span-2">
                     <LanguagePie 
                         repositories={user.repositories.nodes}
                     />
                     <ProfileCalendar username={user.login} />
                 </div>
             </div>
-            <div className="flex flex-col lg:flex-row mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
                 <MostForked repos={user.repositories?.nodes} />
+                <MostStar repos={user.repositories?.nodes} />
             </div>
         </div>
     )

@@ -2,8 +2,8 @@ import { truncate } from 'lodash';
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-const MostForked = ({ repos }) => {
-    const sortByFork = repos.slice(0).sort((a, b) => (a.forkCount > b.forkCount ? -1 : 1)).slice(0, 4)
+const MostStar = ({ repos }) => {
+    const sortByFork = repos.slice(0).sort((a, b) => (a.stargazerCount > b.stargazerCount ? -1 : 1)).slice(0, 4)
     
     const tickFork = value => {
         let roundVal = value > 1000 ? (value/1000).toFixed(1) + 'k' : value
@@ -21,7 +21,7 @@ const MostForked = ({ repos }) => {
 
     return (
         <div className='p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full'>
-            <p className='text-center mb-5 text-xl font-semibold'>Most Forked Repositories</p>
+            <p className='text-center mb-5 text-xl font-semibold'>Most Stared Repositories</p>
             <ResponsiveContainer width="100%" height={420}>
                 <BarChart
                     width={200}
@@ -41,21 +41,21 @@ const MostForked = ({ repos }) => {
                         tickFormatter={tickRepo}
                     />
                     <YAxis 
-                        dataKey="forkCount" 
+                        dataKey="stargazerCount" 
                         width={24}
                         tickFormatter={tickFork}
                     />
                     <Tooltip />
-                    <Bar dataKey="forkCount" fill="#8884d8" />
+                    <Bar dataKey="stargazerCount" fill="#82ca9d" />
                 </BarChart>
             </ResponsiveContainer>
 
             <div className="flex items-center justify-center mt-3 gap-2">
-                <span className="h-3 w-3 bg-[#8884d8]"></span>
-                <p className="text-base font-bold">Fork Count</p>
+                <span className="h-3 w-3 bg-[#82ca9d]"></span>
+                <p className="text-base font-bold">Star Count</p>
             </div>
         </div>
     )
 }
 
-export default MostForked
+export default MostStar
