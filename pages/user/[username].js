@@ -25,12 +25,15 @@ const { SITE_URL } = process.env
 const UserName = ({ user, ogImageUrl }) => {
 
     const SEO = {
-        title: `${user?.name} (@${user?.login}) Github Profile Card`,
+        title: `${user?.name ? user.name : "User"} (@${user?.login}) Github Profile Card`,
         description: `${user?.name} (@${user?.login}) Github Profile in a Different and Graphical way`,
         canonical: `${SITE_URL}/user/${user?.login}`,
+        twitter: {
+            cardType: 'summary_large_image',
+        },
 
         openGraph: {
-            title: `${user?.name} (@${user?.login}) Github Profile Card`,
+            title: `${user?.name ? user.name : "User"} (@${user?.login}) Github Profile Card`,
             description: `${user?.name} (@${user?.login}) Github Profile in a Different and Graphical way`,
             url: `${SITE_URL}/user/${user?.login}`,
 
@@ -39,7 +42,7 @@ const UserName = ({ user, ogImageUrl }) => {
                     url: ogImageUrl,
                     width: 2024,
                     height: 1012,
-                    alt: user?.name
+                    alt: user?.name,
                 }
             ],
         }
@@ -100,7 +103,7 @@ export async function getServerSideProps({ params }) {
         cloud_name: CLOUD_NAME
     });
 
-    const cloudinaryUrl = user && cloudinary.url('git-o-get/github-social-share-card-background_fieaop', {
+    const cloudinaryUrl = user && cloudinary.url('git-o-get/github-social_daskbb', {
         width: 1012,
         height: 506,
         transformation: [
@@ -115,33 +118,33 @@ export async function getServerSideProps({ params }) {
             },
             {
                 flags: 'layer_apply',
-                width: 250,
-                height: 250,
+                width: 290,
+                height: 290,
                 gravity: 'north_west',
-                x: 150,
-                y: 95,
-                radius: 250
+                x: 30,
+                y: 37,
+                radius: 290
             },
             {
                 color: '#8e51ff',
                 crop: 'fit',
-                width: 432,
+                width: 500,
                 overlay: {
                     font_family: 'Source Sans Pro',
-                    font_size: 60,
+                    font_size: 50,
                     font_weight: 'bold',
-                    text: user.name
+                    text: `@${user.login ? user.login : ' '}`
                 },
             },
             {
                 color: '#627597',
                 crop: 'fit',
-                width: 432,
+                width: 500,
                 overlay: {
                     font_family: 'Source Sans Pro',
-                    font_size: 24,
+                    font_size: 30,
                     font_weight: 'semibold',
-                    text: `@${user.login}`
+                    text: user.name ? user.name : ' '
                 },
             },
             {
@@ -152,7 +155,7 @@ export async function getServerSideProps({ params }) {
             {
                 color: '#24292F',
                 crop: 'fit',
-                width: 432,
+                width: 500,
                 overlay: {
                     font_family: 'Source Sans Pro',
                     font_size: 28,
@@ -169,12 +172,12 @@ export async function getServerSideProps({ params }) {
             {
                 color: '#24292F',
                 crop: 'fit',
-                width: 432,
+                width: 500,
                 overlay: {
                     font_family: 'Source Sans Pro',
                     font_size: 28,
                     font_weight: 'semibold',
-                    text: `${user.followers.totalCount} Public repos  ·  ${user.gists.totalCount} Public Gists`,
+                    text: `${user.repositories.totalCount} Public repos  ·  ${user.gists.totalCount} Public Gists`,
                     crop: 'fit'
                 },
             },
@@ -186,7 +189,7 @@ export async function getServerSideProps({ params }) {
             {
                 color: '#24292F',
                 crop: 'fit',
-                width: 432,
+                width: 500,
                 overlay: {
                     font_family: 'Source Sans Pro',
                     font_size: 28,
@@ -203,8 +206,8 @@ export async function getServerSideProps({ params }) {
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                x: 506,
-                y: 80
+                x: 400,
+                y: 50
             }
         ]
     });
