@@ -16,6 +16,12 @@ export const GET_USER = gql `
             following {
                 totalCount
             }
+            pullRequests{
+                totalCount
+            }
+            issues {
+                totalCount
+            }
             followers(last: 100) {
                 totalCount
                 nodes {

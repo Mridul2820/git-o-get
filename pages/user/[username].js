@@ -33,6 +33,8 @@ const UserName = ({ user }) => {
                         following={user.following.totalCount}
                         total_repos={user.repositories.totalCount}
                         total_gists={user.gists.totalCount}
+                        pullRequests={user.pullRequests.totalCount}
+                        issues={user.issues.totalCount}
                     />
                 </div>
                 <div className="h-full w-full flex flex-col gap-5 col-span-1 lg:col-span-2">
