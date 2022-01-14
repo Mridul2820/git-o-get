@@ -121,7 +121,7 @@ export async function getServerSideProps({ params }) {
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 12'
+                y: 'h + 20'
             },
             {
                 color: '#24292F',
@@ -129,9 +129,9 @@ export async function getServerSideProps({ params }) {
                 width: 432,
                 overlay: {
                     font_family: 'Source Sans Pro',
-                    font_size: 32,
-                    font_weight: 'regular',
-                    text: user.bio,
+                    font_size: 28,
+                    font_weight: 'semibold',
+                    text: `${user.followers.totalCount} Followers  ·  ${user.following.totalCount} Following`,
                     crop: 'fit'
                 },
             },
@@ -148,14 +148,14 @@ export async function getServerSideProps({ params }) {
                     font_family: 'Source Sans Pro',
                     font_size: 28,
                     font_weight: 'semibold',
-                    text: `${user.followers.totalCount} Followers    ${user.following.totalCount} Following`,
+                    text: `${user.followers.totalCount} Public repos  ·  ${user.gists.totalCount} Public Gists`,
                     crop: 'fit'
                 },
             },
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 24'
+                y: 'h + 18'
             },
             {
                 color: '#24292F',
@@ -165,14 +165,14 @@ export async function getServerSideProps({ params }) {
                     font_family: 'Source Sans Pro',
                     font_size: 28,
                     font_weight: 'semibold',
-                    text: `${user.followers.totalCount} Public repos    ${user.gists.totalCount} Public Gists`,
+                    text: `${user.pullRequests.totalCount} Pull requests  ·  ${user.issues.totalCount} Issues`,
                     crop: 'fit'
                 },
             },
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 26'
+                y: 'h + 18'
             },
             {
                 flags: 'layer_apply',
