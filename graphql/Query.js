@@ -32,7 +32,7 @@ export const GET_USER = gql `
                     url
                 }
             }
-            repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100){
+            repositories(orderBy: {field: UPDATED_AT, direction: DESC}, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100){
                 totalCount
                 nodes {
                     name
@@ -50,7 +50,7 @@ export const GET_USER = gql `
                     }
                 }
             }
-            gists(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100){
+            gists(orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, first: 100){
                 totalCount
             }
         }

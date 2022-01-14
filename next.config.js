@@ -4,7 +4,8 @@ require('dotenv').config()
 module.exports = {
     env: {
         GITHUB_TOKEN: process.env.GITHUB_TOKEN,
-        SITE_URL: process.env.SITE_URL
+        SITE_URL: process.env.SITE_URL,
+        CLOUD_NAME: process.env.CLOUD_NAME
     },
     publicRuntimeConfig: {},
     images: {
@@ -18,7 +19,7 @@ module.exports = {
         ]
     },
 
-    webpack: (config, { isServer }) => {
+    webpack: (config) => {
         config.resolve.alias['components'] = path.join(__dirname, 'components')
         config.resolve.alias['public'] = path.join(__dirname, 'public')
 
