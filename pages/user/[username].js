@@ -106,7 +106,7 @@ export async function getServerSideProps({ params }) {
         cloud_name: CLOUD_NAME
     });
 
-    const cloudinaryUrl = user && cloudinary.url('git-o-get/github-social_daskbb', {
+    const cloudinaryUrl = user && cloudinary.url('git-o-get/github-social_qd8ok2', {
         width: 1012,
         height: 506,
         transformation: [
@@ -124,7 +124,7 @@ export async function getServerSideProps({ params }) {
                 width: 290,
                 height: 290,
                 gravity: 'north_west',
-                x: 30,
+                x: 50,
                 y: 37,
                 radius: 290
             },
