@@ -5,6 +5,7 @@ import { v2 as cloudinary } from 'cloudinary';
 // GQL
 import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
+import { NextSeo } from 'next-seo';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
 const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
@@ -19,9 +20,34 @@ const LanguagePie = dynamic(() => import('../../components/graphs/LanguagePie'))
 const MostForked = dynamic(() => import('../../components/graphs/MostForked'));
 const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 
+const { SITE_URL } = process.env
+
 const UserName = ({ user, ogImageUrl }) => {
+
+    const SEO = {
+        title: `${user?.name} (@${user?.login}) Github Profile Card`,
+        description: `${user?.name} (@${user?.login}) Github Profile in a Different and Graphical way`,
+        canonical: `${SITE_URL}/user/${user?.login}`,
+
+        openGraph: {
+            title: `${user?.name} (@${user?.login}) Github Profile Card`,
+            description: `${user?.name} (@${user?.login}) Github Profile in a Different and Graphical way`,
+            url: `${SITE_URL}/user/${user?.login}`,
+
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 2024,
+                    height: 1012,
+                    alt: user?.name
+                }
+            ],
+        }
+    };
+
     return (
         <>
+        <NextSeo {...SEO} />
         <Navbar />
         <div className="px-5 py-10 max-w-[1500px] mx-auto">
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
@@ -113,7 +139,7 @@ export async function getServerSideProps({ params }) {
                 width: 432,
                 overlay: {
                     font_family: 'Source Sans Pro',
-                    font_size: 34,
+                    font_size: 24,
                     font_weight: 'semibold',
                     text: `@${user.login}`
                 },
@@ -121,7 +147,7 @@ export async function getServerSideProps({ params }) {
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 20'
+                y: 'h + 18'
             },
             {
                 color: '#24292F',
@@ -138,7 +164,7 @@ export async function getServerSideProps({ params }) {
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 18'
+                y: 'h + 15'
             },
             {
                 color: '#24292F',
@@ -155,7 +181,7 @@ export async function getServerSideProps({ params }) {
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 18'
+                y: 'h + 15'
             },
             {
                 color: '#24292F',
@@ -172,7 +198,7 @@ export async function getServerSideProps({ params }) {
             {
                 flags: 'layer_apply',
                 gravity: 'north_west',
-                y: 'h + 18'
+                y: 'h + 15'
             },
             {
                 flags: 'layer_apply',
