@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FaTwitter, FaWhatsapp, FaLinkedin } from 'react-icons/fa'
+import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { BiLinkAlt } from 'react-icons/bi'
 import { useState } from 'react';
 
@@ -30,7 +30,7 @@ const SocialShare = ({ username }) => {
 
     return (
         <div className="flex justify-center items-center flex-col gap-4 mb-4">
-            <p className='text-center text-2xl font-bold'>Share Card</p>
+            <p className='text-center text-2xl font-bold select-none'>Share Card</p>
 
             <SocialWrap className='flex justify-center items-center gap-4'>
                 <a 
@@ -52,18 +52,6 @@ const SocialShare = ({ username }) => {
                     className={`linkedin ${ShareClass}`}
                 >
                     <FaLinkedin size="20px" />
-                </a>
-                
-                <a 
-                    href={`whatsapp://send?text=${shareText} ${SITE_URL}/user/${username}`} 
-                    data-social-type="vertical" 
-                    data-social-tool="whatsapp"
-                    className={`whatsapp ${ShareClass}`}
-                    target="_blank" 
-                    rel="noreferrer"
-                    title="Share in Whatsapp"
-                >
-                    <FaWhatsapp size="20px" />
                 </a>
 
                 <CopyLink 
