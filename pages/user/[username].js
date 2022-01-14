@@ -72,7 +72,10 @@ const UserName = ({ user, ogImageUrl }) => {
                         <LanguagePie 
                             repositories={user.repositories.nodes}
                         />
-                        <SocialCard ogImageUrl={ogImageUrl} />
+                        <SocialCard 
+                            username={user.login}
+                            ogImageUrl={ogImageUrl} 
+                        />
                     </div>
                     <ProfileCalendar username={user.login} />
                 </div>
