@@ -3,13 +3,13 @@
 </p>
 
 <div align="center">
-    <h1>🤑 Git to Get 🤑</h1>
+    <h1>Git o Get</h1>
 </div>
 
 <br />
 
 ## Tech Stack 👾
-- [Next JS]9https://nextjs.org/
+- [Next JS](https://nextjs.org/)
 - [Tailwind](https://tailwindcss.com/)
 - [Recoil](https://recoiljs.org/)
 - [Styled Components](https://styled-components.com/)
