@@ -2,7 +2,7 @@
 
 **Pull Request Guidelines**
 
-1. [Fork][fork-link] the repository [Git o Get](repo-link).
+1. [Fork][fork-link] the repository [Git o Get](https://github.com/Mridul2820/git-o-get/fork).
 2. [Clone][clone-link] your new fork of the repository locally.
 ```
 git clone https://github.com/<your-github-username>/git-o-get
@@ -19,7 +19,7 @@ cd git-o-get
 ```
 git checkout -b <YOUR_BRANCH_NAME>
 ```
-6. [Run it Locally](https://github.com/Mridul2820/crypto-check#run-locally-)
+6. [Run it Locally](https://github.com/Mridul2820/git-o-get#run-locally-)
 7. Add yor changes
 ```
 git add .
