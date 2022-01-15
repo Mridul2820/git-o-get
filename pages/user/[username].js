@@ -92,6 +92,7 @@ const UserName = ({ user, ogImageUrl }) => {
 
 export async function getServerSideProps({ params }) {
     const { CLOUD_NAME } = process.env
+    const { BASE_IMAGE_URL } = process.env
   
     const { data } = await client.query({
         query: GET_USER,
@@ -106,7 +107,7 @@ export async function getServerSideProps({ params }) {
         cloud_name: CLOUD_NAME
     });
 
-    const cloudinaryUrl = user && cloudinary.url('git-o-get/github-social_qd8ok2', {
+    const cloudinaryUrl = user && cloudinary.url(BASE_IMAGE_URL, {
         width: 1012,
         height: 506,
         transformation: [

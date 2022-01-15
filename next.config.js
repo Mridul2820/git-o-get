@@ -5,7 +5,8 @@ module.exports = {
     env: {
         GITHUB_TOKEN: process.env.GITHUB_TOKEN,
         SITE_URL: process.env.SITE_URL,
-        CLOUD_NAME: process.env.CLOUD_NAME
+        CLOUD_NAME: process.env.CLOUD_NAME,
+        BASE_IMAGE_URL: process.env.BASE_IMAGE_URL,
     },
     publicRuntimeConfig: {},
     images: {
