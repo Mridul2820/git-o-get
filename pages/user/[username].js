@@ -108,6 +108,7 @@ export async function getServerSideProps({ params }) {
     });
 
     const cloudinaryUrl = user && cloudinary.url(BASE_IMAGE_URL, {
+        secure: true,
         width: 1012,
         height: 506,
         transformation: [

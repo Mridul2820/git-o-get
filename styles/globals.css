@@ -9,7 +9,7 @@ body {
 * {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: rgb(154, 101, 253) rgb(210, 200, 255);
+    scrollbar-color: #9a65fd #d2c8ff;
 }
 
 *::-webkit-scrollbar {
@@ -17,9 +17,9 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-    background: rgb(200, 200, 255);
+    background: #c8c8ff;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(154, 101, 253);
+    background-color: #9a65fd;
 }

@@ -3,6 +3,7 @@ import Search from '../components/reuse/Search'
 
 const Home = () => {
 
+    const FreturePoint = 'font-semibold py-2 px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4'
 
     return (
         <div className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
@@ -28,14 +29,14 @@ const Home = () => {
                     <p className="font-semibold text-xl">Features</p>
 
                     <ul className='flex justify-center flex-wrap gap-3 select-none'>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Profile Details</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Language Crad</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Shareable Social Card</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Profile Stats</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Profile Contribution Calander</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>List of Followers{'('}last 100{')'}</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Most forked Repository Graph</li>
-                        <li className='p-2 bg-slate-200 rounded-md cursor-pointer shadow-bs4'>Most Stared Repository Graph</li>
+                        <li className={FreturePoint}>Profile Details</li>
+                        <li className={FreturePoint}>Language Crad</li>
+                        <li className={FreturePoint}>Shareable Social Card</li>
+                        <li className={FreturePoint}>Profile Stats</li>
+                        <li className={FreturePoint}>Profile Contribution Calander</li>
+                        <li className={FreturePoint}>List of Followers{'('}last 100{')'}</li>
+                        <li className={FreturePoint}>Most forked Repository Graph</li>
+                        <li className={FreturePoint}>Most Stared Repository Graph</li>
                     </ul>
                 </div>
             </div>
