@@ -51,6 +51,13 @@ This app is Deployed to Vercel
 <br />
 [View Demo](https://git-o-get.vercel.app/)
 
+## SnapShots 💻
+### Home Page
+<img src="/public/assets/app-home.png" align="center"/>
+
+### User Detail Page
+<img src="/public/assets/app-snapshot.png" align="center"/>
+
 ## Prerequisites '✔
 Required to install and run the software:
 * [Node JS 14+](https://nodejs.org/)
