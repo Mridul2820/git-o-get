@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
 import { v2 as cloudinary } from 'cloudinary';
 
@@ -6,6 +6,7 @@ import { v2 as cloudinary } from 'cloudinary';
 import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
 import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
 const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
@@ -23,6 +24,16 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 const { SITE_URL } = process.env
 
 const UserName = ({ user, ogImageUrl }) => {
+    const router = useRouter()
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+
+        setTimeout(() => {
+            setLoading(false)
+        }, 2500);
+    }, [router.pathname])
 
     const SEO = {
         title: `${user?.name ? user.name : "User"} (@${user?.login}) Github Profile Card`,
@@ -75,6 +86,7 @@ const UserName = ({ user, ogImageUrl }) => {
                         <SocialCard 
                             username={user.login}
                             ogImageUrl={ogImageUrl} 
+                            loading={loading}
                         />
                     </div>
                     <ProfileCalendar username={user.login} />
