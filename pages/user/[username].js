@@ -7,6 +7,7 @@ import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
+import NotFound from '../../components/404/NotFound';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
 const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
@@ -58,6 +59,8 @@ const UserName = ({ user, ogImageUrl }) => {
             ],
         }
     };
+
+    if(user === null) return <NotFound />
 
     return (
         <>
