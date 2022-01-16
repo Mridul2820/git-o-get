@@ -33,7 +33,7 @@ const UserName = ({ user, ogImageUrl }) => {
         setTimeout(() => {
             setLoading(false)
         }, 2500);
-    }, [router.pathname])
+    }, [router.query.username])
 
     const SEO = {
         title: `${user?.name ? user.name : "User"} (@${user?.login}) Github Profile Card`,
