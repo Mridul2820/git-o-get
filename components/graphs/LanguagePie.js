@@ -39,7 +39,8 @@ const LanguagePie = ({ repositories }) => {
             color: '#bbb',
             size: sum_of_other
         })
-        
+    } else {
+        formatLangs.push(...allLangs)
     }
 
     const sum_of_all_values = sumBy(formatLangs, 'size')
