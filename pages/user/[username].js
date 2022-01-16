@@ -24,7 +24,7 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 
 const { SITE_URL } = process.env
 
-const UserName = ({ user, ogImageUrl }) => {
+const UserName = ({ user, ogImageUrl, errorCode }) => {
     const router = useRouter()
     const [loading, setLoading] = useState(true)
 
@@ -115,6 +115,8 @@ export async function getServerSideProps({ params }) {
             username: params.username,
         }
     });
+
+    const errorCode = data.user === null && true
 
     const user = data.user
 
@@ -234,6 +236,7 @@ export async function getServerSideProps({ params }) {
 
     return {
         props: {
+            errorCode,
             user: data.user,
             ogImageUrl: cloudinaryUrl,
         },
