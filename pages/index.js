@@ -11,7 +11,7 @@ const Home = () => {
             <div className="flex gap-5 flex-col-reverse md:flex-row justify-center items-center max-w-[1200px] w-full mx-auto pb-5 pt-0 md:pt-5">
                 <div className="w-full md:w-[50%]">
                     <img 
-                        src="/assets/developer_activity.svg" 
+                        src="/svg/developer_activity.svg" 
                         alt="developer_activity"
                         className='w-full max-w-[500px] mx-auto'
                     />
