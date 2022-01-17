@@ -18,9 +18,6 @@ const ProfileInfo = ({ user }) => {
             return 'https://' + url
         }
     }
-
-    console.log(setURL(user.websiteUrl))
-    console.log(user.websiteUrl.protocol);
     
     return (
         <motion.div 

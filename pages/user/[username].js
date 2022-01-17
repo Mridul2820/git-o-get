@@ -21,6 +21,7 @@ const ProfileCalendar = dynamic(() => import('../../components/profile/ProfileCa
 const LanguagePie = dynamic(() => import('../../components/graphs/LanguagePie'));
 const MostForked = dynamic(() => import('../../components/graphs/MostForked'));
 const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
+const ContributionGraph = dynamic(() => import('../../components/graphs/ContributionGraph'));
 
 const { SITE_URL } = process.env
 
@@ -97,6 +98,10 @@ const UserName = ({ user, ogImageUrl }) => {
                 <MostForked repos={user.repositories?.nodes} />
                 <MostStar repos={user.repositories?.nodes} />
             </div>
+
+            <ContributionGraph 
+                weeks={user.contributionsCollection.contributionCalendar.weeks}
+            />
         </main>
         </>
     )
@@ -109,7 +114,7 @@ export async function getServerSideProps({ params }) {
     const { data } = await client.query({
         query: GET_USER,
         variables: {
-            username: params.username,
+            username: params.username
         }
     });
 

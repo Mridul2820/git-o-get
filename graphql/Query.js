@@ -53,6 +53,17 @@ export const GET_USER = gql `
             gists(orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, first: 100){
                 totalCount
             }
+            contributionsCollection {
+                contributionCalendar {
+                    totalContributions
+                    weeks {
+                        contributionDays {
+                            date
+                            contributionCount
+                        }
+                    }
+                }
+            }
         }
     }
 `;
