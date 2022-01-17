@@ -1,5 +1,7 @@
 const { SITE_URL } = process.env
 
+const siteUrl = SITE_URL
+
 module.exports = {
     siteUrl,
     generateRobotsTxt: true,
