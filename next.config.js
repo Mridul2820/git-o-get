@@ -7,6 +7,7 @@ module.exports = {
         SITE_URL: process.env.SITE_URL,
         CLOUD_NAME: process.env.CLOUD_NAME,
         BASE_IMAGE_URL: process.env.BASE_IMAGE_URL,
+        NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     },
     publicRuntimeConfig: {},
     images: {
