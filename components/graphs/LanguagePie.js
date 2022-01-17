@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { sumBy } from 'lodash';
 import React, { useState } from 'react'
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
@@ -105,7 +106,12 @@ const LanguagePie = ({ repositories }) => {
     }
 
     return (
-        <div className='p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[400px] max-w-[380px] bg-white'>
+        <motion.div 
+            className='p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[400px] max-w-[380px] bg-white'
+            transition={{duration: 1}}
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+        >
             <p className='text-center mb-3 text-xl font-semibold'>Language Card</p>
             <RenderLegend />
             <ResponsiveContainer width="100%" height={250}>
@@ -134,7 +140,7 @@ const LanguagePie = ({ repositories }) => {
                     />
                 </PieChart>
             </ResponsiveContainer>
-        </div>
+        </motion.div>
     )
 }
 

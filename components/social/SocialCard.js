@@ -5,6 +5,7 @@ import { BsFillCloudDownloadFill } from 'react-icons/bs'
 import styled from 'styled-components'
 import SocialShare from './SocialShare'
 import PuffLoader from '../loader/PuffLoader';
+import { motion } from 'framer-motion';
 
 const SocialCard = ({ ogImageUrl, username, loading }) => {
     const handleDownload = (url, filename) => {
@@ -18,7 +19,12 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
     };
 
     return (
-        <div className='flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[442px] bg-white'>
+        <motion.div 
+            className='flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[442px] bg-white'
+            transition={{duration: 1}}
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+        >
             {loading ? 
                 <div className="flex justify-center items-center h-full">
                     <PuffLoader />
@@ -44,7 +50,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
                 </div>
                 </>
             }
-        </div>
+        </motion.div>
     )
 }
 
