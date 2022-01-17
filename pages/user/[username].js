@@ -7,6 +7,7 @@ import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
+import NotFound from '../../components/404/NotFound';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
 const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
@@ -23,7 +24,7 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 
 const { SITE_URL } = process.env
 
-const UserName = ({ user, ogImageUrl }) => {
+const UserName = ({ user, ogImageUrl, errorCode }) => {
     const router = useRouter()
     const [loading, setLoading] = useState(true)
 
@@ -58,6 +59,8 @@ const UserName = ({ user, ogImageUrl }) => {
             ],
         }
     };
+
+    if(user === null) return <NotFound />
 
     return (
         <>
@@ -112,6 +115,8 @@ export async function getServerSideProps({ params }) {
             username: params.username,
         }
     });
+
+    const errorCode = data.user === null && true
 
     const user = data.user
 
@@ -231,6 +236,7 @@ export async function getServerSideProps({ params }) {
 
     return {
         props: {
+            errorCode,
             user: data.user,
             ogImageUrl: cloudinaryUrl,
         },
