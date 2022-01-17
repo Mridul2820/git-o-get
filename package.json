@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
@@ -17,6 +18,7 @@
     "lodash": "^4.17.21",
     "next": "12.0.7",
     "next-seo": "^4.28.1",
+    "next-sitemap": "^1.9.12",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-github-calendar": "^3.2.2",
