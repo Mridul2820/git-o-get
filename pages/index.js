@@ -6,7 +6,7 @@ const Home = () => {
     const FreturePoint = 'text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4'
 
     return (
-        <div className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
+        <main className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
             <h1 className='text-center text-2xl md:text-3xl font-bold'>View Your Github Profile in a Different and Graphical way</h1>
             <div className="flex gap-5 flex-col-reverse md:flex-row justify-center items-center max-w-[1200px] w-full mx-auto pb-5 pt-0 md:pt-5">
                 <div className="w-full md:w-[50%]">
@@ -40,7 +40,7 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

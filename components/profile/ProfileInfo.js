@@ -8,6 +8,20 @@ import { BsLink45Deg } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
 const ProfileInfo = ({ user }) => {
+
+    const setURL = url => {
+        if (url.protocol === 'https:') {
+            return url
+        } else if (url.protocol === 'http:') {
+            return url
+        } else {
+            return 'https://' + url
+        }
+    }
+
+    console.log(setURL(user.websiteUrl))
+    console.log(user.websiteUrl.protocol);
+    
     return (
         <motion.div 
             className='py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white'
@@ -79,7 +93,7 @@ const ProfileInfo = ({ user }) => {
                     <div className="flex items-center gap-1 mt-2">
                         <BsLink45Deg size={22} />
                         <a 
-                            href={`https://${user.websiteUrl}`}
+                            href={user.websiteUrl}
                             target="_blank"
                             rel="noreferrer"
                             className="hover:underline hover:text-gray-800"

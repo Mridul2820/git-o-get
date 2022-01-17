@@ -66,7 +66,7 @@ const UserName = ({ user, ogImageUrl }) => {
         <>
         <NextSeo {...SEO} />
         <Navbar />
-        <div className="px-5 py-10 max-w-[1500px] mx-auto min-h-screen">
+        <main className="px-5 py-10 max-w-[1500px] mx-auto min-h-screen">
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 <div className="w-full flex gap-5 flex-col">
                     <ProfileInfo 
@@ -100,7 +100,7 @@ const UserName = ({ user, ogImageUrl }) => {
                 <MostForked repos={user.repositories?.nodes} />
                 <MostStar repos={user.repositories?.nodes} />
             </div>
-        </div>
+        </main>
         </>
     )
 }

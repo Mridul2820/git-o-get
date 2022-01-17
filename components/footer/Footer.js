@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='p-3 flex justify-center items-center gap-1 flex-col sm:flex-row bg-white'>
+        <footer className='p-3 flex justify-center items-center gap-1 flex-col sm:flex-row bg-white'>
             <span>
                 &copy; {new Date().getFullYear()} by
                 <a 
@@ -25,7 +25,7 @@ const Footer = () => {
                     {'<Code/>'}
                 </a>
             </span>
-        </div>
+        </footer>
     )
 }
 
