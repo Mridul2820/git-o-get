@@ -15,12 +15,12 @@ const Search = () => {
     }
 
     return (
-        <form className="flex items-center" onSubmit={handleOnSubmit}>
+        <form className="flex items-center max-w-[300px] w-full" onSubmit={handleOnSubmit}>
             <input 
                 type="text" 
                 name="username" 
-                placeholder='username'
-                className='px-2 outline-none h-9 border-2 border-purple-400 rounded-l-md focus:shadow-bs3'
+                placeholder='Search Username'
+                className='px-2 outline-none h-9 border-2 border-purple-400 rounded-l-md focus:shadow-bs3 w-full'
             />
             <button type='submit' className='bg-purple-mid text-white h-9 px-2 rounded-r-md'>
                 <FaSearch />

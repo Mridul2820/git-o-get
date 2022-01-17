@@ -3,7 +3,7 @@ import Search from '../components/reuse/Search'
 
 const Home = () => {
 
-    const FreturePoint = 'font-semibold py-2 px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4'
+    const FreturePoint = 'text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4'
 
     return (
         <div className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
@@ -24,7 +24,7 @@ const Home = () => {
                             className='w-full'
                         />
                     </div>
-                    <h2 className="text-xl font-bold">Serach Your Github Username</h2>
+                    <h2 className="text-center text-base sm:text-xl font-bold">Serach Your Github Username</h2>
                     <Search />
                     <p className="font-semibold text-xl">Features</p>
 
