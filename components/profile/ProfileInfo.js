@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion';
 import { BiBuildings } from 'react-icons/bi'
 import { IoLocationOutline } from 'react-icons/io5'
 import { AiOutlineTwitter } from 'react-icons/ai'
@@ -8,7 +9,12 @@ import { HiOutlineMail } from 'react-icons/hi'
 
 const ProfileInfo = ({ user }) => {
     return (
-        <div className='py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white'>
+        <motion.div 
+            className='py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white'
+            transition={{duration: 1}}
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+        >
             <div className="flex items-center gap-3">
                 <Image 
                     src={user.avatarUrl}
@@ -83,7 +89,7 @@ const ProfileInfo = ({ user }) => {
                     </div>
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -4,6 +4,7 @@ import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { AiOutlinePullRequest } from 'react-icons/ai';
 import { VscIssues } from 'react-icons/vsc';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const ProfileNums = ({ followers, following, total_repos, total_gists, pullRequests, issues }) => {
     const items = [
@@ -58,7 +59,12 @@ const ProfileNums = ({ followers, following, total_repos, total_gists, pullReque
     ];
 
     return (
-        <div className='shadow-bs1 rounded-md w-full bg-white p-5'>
+        <motion.div 
+            className='shadow-bs1 rounded-md w-full bg-white p-5'
+            transition={{duration: 1}}
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+        >
             <p className='text-center mb-5 text-xl font-semibold'>User Stats</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                 {items.map((item) => (
@@ -73,7 +79,7 @@ const ProfileNums = ({ followers, following, total_repos, total_gists, pullReque
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

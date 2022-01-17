@@ -24,7 +24,7 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 
 const { SITE_URL } = process.env
 
-const UserName = ({ user, ogImageUrl, errorCode }) => {
+const UserName = ({ user, ogImageUrl }) => {
     const router = useRouter()
     const [loading, setLoading] = useState(true)
 
@@ -66,7 +66,7 @@ const UserName = ({ user, ogImageUrl, errorCode }) => {
         <>
         <NextSeo {...SEO} />
         <Navbar />
-        <div className="px-5 py-10 max-w-[1500px] mx-auto">
+        <div className="px-5 py-10 max-w-[1500px] mx-auto min-h-screen">
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 <div className="w-full flex gap-5 flex-col">
                     <ProfileInfo 

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import GitHubCalendar from 'react-github-calendar';
 import ReactTooltip from 'react-tooltip';
@@ -5,7 +6,12 @@ import styled from 'styled-components';
 
 const ProfileCalendar = ({ username }) => {
     return (
-        <CalenderWrap className='flex flex-col gap-3 items-center p-3 shadow-bs1 rounded-md w-full bg-white'>
+        <CalenderWrap 
+            className='flex flex-col gap-3 items-center p-3 shadow-bs1 rounded-md w-full bg-white'
+            transition={{duration: 1}}
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+        >
             <p className="font-bold">
                 <a href={`https://github.com/${username}`}>{'@' + username}</a> on GitHub
             </p>
@@ -16,7 +22,7 @@ const ProfileCalendar = ({ username }) => {
     )
 }
 
-const CalenderWrap = styled.div`
+const CalenderWrap = styled(motion.div)`
     .react-activity-calendar__legend-colors {
         @media only screen and (max-width: 600px){
             display: none;
