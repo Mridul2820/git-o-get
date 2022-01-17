@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/public/logo.png" align="center" width="80"/>
+    <img src="/public/logo.png" align="center" width="80"/>
 </p>
 
 <div align="center">
@@ -49,7 +49,7 @@
 ## Demo 🌍
 This app is Deployed to Vercel
 <br />
-[View Demo](https://git-o-get.vercel.app/)
+[View Demo](https://git-o-get.mridul.tech/)
 
 ## SnapShots 💻
 ### Home Page

@@ -37,16 +37,13 @@ const UserName = ({ user, ogImageUrl }) => {
     }, [router.query.username])
 
     const SEO = {
-        title: `${user?.name ? user.name : "User"} (@${user?.login}) Github Profile Card`,
-        description: `${user?.name} (@${user?.login}) Github Profile in a Different and Graphical way`,
+        title: `${user?.name ? user.name : "User"} (@${user?.login}) : Github Profile Stats and Graphs in One Place`,
+        description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
         canonical: `${SITE_URL}/user/${user?.login}`,
-        twitter: {
-            cardType: 'summary_large_image',
-        },
 
         openGraph: {
-            title: `${user?.name ? user.name : "User"} (@${user?.login}) Github Profile Card`,
-            description: `${user?.name} (@${user?.login}) Github Profile in a Different and Graphical way`,
+            title: `${user?.name ? user.name : "User"} (@${user?.login}) : Github Profile Stats and Graphs in One Place`,
+            description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
             url: `${SITE_URL}/user/${user?.login}`,
 
             images: [

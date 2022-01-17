@@ -1,12 +1,12 @@
 export default {
     title: "Git O Get - Github Profile Stats and Graphs in One Place",
-    description: "Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats and Graphs",
+    description: "Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more",
     openGraph: {
         title: "Git O Get - Github Profile Stats and Graphs in One Place",
-        description: "Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats and Graphs",
+        description: "Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more",
         type: 'website',
         locale: 'en_IN',
-        url: 'https://git-to-get.vercel.app',
+        url: 'https://git-o-get.mridul.tech',
         site_name: 'git-to-get',
         twitter: {
             cardType: 'summary_large_image',
