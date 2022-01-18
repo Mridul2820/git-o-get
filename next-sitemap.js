@@ -7,11 +7,13 @@ module.exports = {
     generateRobotsTxt: true,
     robotsTxtOptions: {
         policies: [
+            { userAgent: "*", disallow: "/500" },
             { userAgent: "*", allow: "/" },
         ],
         additionalSitemaps: [
-            `${SITE_URL}/sitemap.xml`,
+            `${siteUrl}/sitemap.xml`,
         ],
     },
+    exclude: ["/500"],
 };
   
