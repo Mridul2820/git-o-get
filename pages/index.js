@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <main className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
-            <h1 className='text-center text-2xl md:text-3xl font-bold'>View Your Github Profile in a Different and Graphical way</h1>
+            <h1 className='text-center text-2xl md:text-3xl font-bold'>Git O Get - Github Profile Stats and Graphs in One Place</h1>
             <div className="flex gap-5 flex-col md:flex-row justify-center items-center max-w-[1200px] w-full mx-auto pb-5 pt-0 md:pt-5">
                 <div className="w-full md:w-[50%]">
                     <Image 
