@@ -7,7 +7,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.sportzhut.com
+Host: https://git-o-get.mridul.tech
 
 # Sitemaps
-Sitemap: https://www.sportzhut.com/sitemap.xml
+Sitemap: https://git-o-get.mridul.tech/sitemap.xml

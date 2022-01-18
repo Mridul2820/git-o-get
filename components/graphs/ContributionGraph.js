@@ -48,38 +48,40 @@ const ContributionGraph = ({ weeks,username }) => {
     return (
         <div className='py-3 px-5 shadow-bs1 rounded-md h-full w-full min-h-[400px] bg-white mt-5 relative'>
             <p className='text-center mb-5 text-xl font-semibold'>{username}&apos;s Contribution Graph</p>
-            <p className='absolute -left-6 top-[50%] -rotate-90'>Contributions</p>
-            <p className='absolute left-[50%] bottom-3 translate-x-[-50%]'>
+            <p className='absolute -left-6 top-[50%] -rotate-90 hidden md:block'>Contributions</p>
+            <p className='absolute left-[50%] bottom-3 translate-x-[-50%] whitespace-nowrap'>
                 Days <span className="font-semibold">{'(' + contributions[0].date + ' - ' + contributions.slice(-1)[0].date  + ')'}</span>
             </p>
-            <ResponsiveContainer width="100%" height={400}>
-                <LineChart 
-                    width={800} 
-                    height={300} 
-                    data={contributions} 
-                    className='mr-5' 
-                    margin={{ top: 5, right: 10, left: 20, bottom: 28 }}
-                >
-                    <CartesianGrid/>
-                    <Tooltip 
-                        content={<CustomTooltip />}
-                    />
-                    <XAxis 
-                        dataKey="date"
-                        tickFormatter={tickDate}
-                        interval={1}
-                    />
-                    <YAxis 
-                        width={32}
-                    />
-                    <Line 
-                        type="monotone" 
-                        dataKey="contributionCount"
-                        stroke="#9a65fd"
-                        strokeWidth={2}
-                    />
-                </LineChart>
-            </ResponsiveContainer>
+            <div className="pb-8 pl-0 md:pl-4">
+                <ResponsiveContainer width="100%" height={400}>
+                    <LineChart 
+                        width={800} 
+                        height={300} 
+                        data={contributions} 
+                        className='mr-5' 
+                        margin={{ top: 0, right: 10, left: 0, bottom: 0 }}
+                    >
+                        <CartesianGrid/>
+                        <Tooltip 
+                            content={<CustomTooltip />}
+                        />
+                        <XAxis 
+                            dataKey="date"
+                            tickFormatter={tickDate}
+                            interval={1}
+                        />
+                        <YAxis 
+                            width={32}
+                        />
+                        <Line 
+                            type="monotone" 
+                            dataKey="contributionCount"
+                            stroke="#9a65fd"
+                            strokeWidth={2}
+                        />
+                    </LineChart>
+                </ResponsiveContainer>
+            </div>
         </div>
     )
 }
