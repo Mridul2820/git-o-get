@@ -32,7 +32,7 @@ const Home = () => {
                         />
                     </div>
                     <h2 className="text-center text-base sm:text-xl font-bold">Serach Your Github Username</h2>
-                    <Search height={12}/>
+                    <Search height="h-12"/>
                     <p className="font-semibold text-xl">Features</p>
 
                     <ul className='flex justify-center flex-wrap gap-3 select-none'>

@@ -15,7 +15,7 @@ const Search = ({ height }) => {
     }
 
     return (
-        <form className={`flex items-center max-w-[300px] w-full h-${height}`} onSubmit={handleOnSubmit}>
+        <form className={`flex items-center max-w-[300px] w-full ${height}`} onSubmit={handleOnSubmit}>
             <input 
                 type="text" 
                 name="username" 

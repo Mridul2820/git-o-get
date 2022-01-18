@@ -20,7 +20,7 @@ const Navbar = () => {
                         />
                     </a>
                 </Link>
-                <Search height={9} />
+                <Search height="h-9" />
                 <a 
                     href="https://github.com/Mridul2820/git-o-get"
                     target='_blank'
