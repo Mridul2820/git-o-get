@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Disallow: /secret
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sportzhut.com
+
+# Sitemaps
+Sitemap: https://www.sportzhut.com/sitemap.xml

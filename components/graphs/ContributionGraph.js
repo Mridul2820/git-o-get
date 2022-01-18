@@ -20,8 +20,6 @@ const ContributionGraph = ({ weeks,username }) => {
         36 + presentDay
     );
 
-    console.log(contributions);
-
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
             return (
