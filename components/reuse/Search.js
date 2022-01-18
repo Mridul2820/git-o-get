@@ -2,7 +2,7 @@ import React from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 
-const Search = () => {
+const Search = ({ height }) => {
     const router = useRouter()
 
     const  handleOnSubmit = (event) => {
@@ -15,14 +15,18 @@ const Search = () => {
     }
 
     return (
-        <form className="flex items-center max-w-[300px] w-full" onSubmit={handleOnSubmit}>
+        <form className={`flex items-center max-w-[300px] w-full h-${height}`} onSubmit={handleOnSubmit}>
             <input 
                 type="text" 
                 name="username" 
                 placeholder='Search Username'
-                className='px-2 outline-none h-9 border-2 border-purple-400 rounded-l-md focus:shadow-bs3 w-full'
+                className='px-2 outline-none border-2 border-purple-400 rounded-l-md focus:shadow-bs3 w-full h-full'
             />
-            <button type='submit' className='bg-purple-mid text-white h-9 px-2 rounded-r-md'>
+            <button 
+                aria-label='search' 
+                type='submit' 
+                className='bg-purple-mid text-white h-full px-4 rounded-r-md'
+            >
                 <FaSearch />
             </button>
         </form>

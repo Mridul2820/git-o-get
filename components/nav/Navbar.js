@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <nav className='flex justify-center items-center bg-white w-full'>
-            <div className="flex justify-between w-full max-w-[1500px] mx-auto px-5 py-4">
+            <div className="flex justify-between items-center w-full max-w-[1500px] mx-auto px-5 py-4">
                 <Link href="/">
                     <a className='h-9 w-9'>
                         <Image 
@@ -20,7 +20,7 @@ const Navbar = () => {
                         />
                     </a>
                 </Link>
-                <Search />
+                <Search height={9} />
                 <a 
                     href="https://github.com/Mridul2820/git-o-get"
                     target='_blank'

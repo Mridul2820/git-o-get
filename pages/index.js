@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Search from '../components/reuse/Search'
 
 const Home = () => {
@@ -8,9 +9,13 @@ const Home = () => {
     return (
         <main className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
             <h1 className='text-center text-2xl md:text-3xl font-bold'>View Your Github Profile in a Different and Graphical way</h1>
-            <div className="flex gap-5 flex-col-reverse md:flex-row justify-center items-center max-w-[1200px] w-full mx-auto pb-5 pt-0 md:pt-5">
+            <div className="flex gap-5 flex-col md:flex-row justify-center items-center max-w-[1200px] w-full mx-auto pb-5 pt-0 md:pt-5">
                 <div className="w-full md:w-[50%]">
-                    <img 
+                    <Image 
+                        height={400}
+                        width={500}
+                        priority={true}
+                        layout='responsive'
                         src="/svg/developer_activity.svg" 
                         alt="developer_activity"
                         className='w-full max-w-[500px] mx-auto'
@@ -22,10 +27,12 @@ const Home = () => {
                             src="/logo.png" 
                             alt="logo"
                             className='w-full'
+                            height={64}
+                            width={64}
                         />
                     </div>
                     <h2 className="text-center text-base sm:text-xl font-bold">Serach Your Github Username</h2>
-                    <Search />
+                    <Search height={12}/>
                     <p className="font-semibold text-xl">Features</p>
 
                     <ul className='flex justify-center flex-wrap gap-3 select-none'>
