@@ -101,6 +101,7 @@ const UserName = ({ user, ogImageUrl }) => {
 
             <ContributionGraph 
                 weeks={user.contributionsCollection.contributionCalendar.weeks}
+                username={user.login}
             />
         </main>
         </>
