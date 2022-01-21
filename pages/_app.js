@@ -1,4 +1,6 @@
 import { RecoilRoot } from 'recoil'
+import {ThemeProvider} from 'next-themes'
+
 import '../styles/globals.css'
 
 // SEO
@@ -16,7 +18,9 @@ function MyApp({ Component, pageProps }) {
         <ApolloProvider client={client}>
             <RecoilRoot>
                 <DefaultSeo {...SEO} />
-                <Component {...pageProps} />
+                <ThemeProvider attribute="class"> 
+                    <Component {...pageProps} />
+                </ThemeProvider>
                 <Footer />
             </RecoilRoot>
         </ApolloProvider>

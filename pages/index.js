@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import Search from '../components/reuse/Search'
+import {useTheme} from 'next-themes'
 
 const Home = () => {
 
     const FreturePoint = 'text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4'
-
+    const {theme, setTheme} = useTheme()
     return (
         <main className='py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center'>
             <h1 className='text-center text-2xl md:text-3xl font-bold'>Git O Get - Github Profile Stats and Graphs in One Place</h1>
@@ -46,7 +47,11 @@ const Home = () => {
                         <li className={FreturePoint}>Most Stared Repository Graph</li>
                     </ul>
                 </div>
+                <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="position: relative bottom: 30px bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Toggle Darkmode
+                </button>
             </div>
+            
         </main>
     )
 }
