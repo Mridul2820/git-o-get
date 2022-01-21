@@ -1,6 +1,7 @@
-import { truncate } from 'lodash';
 import React from 'react'
+import { truncate } from 'lodash';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import CustomTooltip from '../reuse/CustomTooltip';
 
 const MostForked = ({ repos }) => {
     const sortByFork = repos.slice(0).sort((a, b) => (a.forkCount > b.forkCount ? -1 : 1)).slice(0, 4)
@@ -43,7 +44,7 @@ const MostForked = ({ repos }) => {
                         width={24}
                         tickFormatter={tickFork}
                     />
-                    <Tooltip />
+                    <Tooltip content={<CustomTooltip />} />
                     <Bar dataKey="forkCount" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>

@@ -1,6 +1,7 @@
-import { truncate } from 'lodash';
 import React from 'react'
+import { truncate } from 'lodash';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import CustomTooltip from '../reuse/CustomTooltip';
 
 const MostStar = ({ repos }) => {
     const sortByFork = repos.slice(0).sort((a, b) => (a.stargazerCount > b.stargazerCount ? -1 : 1)).slice(0, 4)
@@ -43,7 +44,8 @@ const MostStar = ({ repos }) => {
                         width={24}
                         tickFormatter={tickFork}
                     />
-                    <Tooltip />
+                    <Tooltip content={<CustomTooltip />} />
+
                     <Bar dataKey="stargazerCount" fill="#82ca9d" />
                 </BarChart>
             </ResponsiveContainer>
