@@ -1,5 +1,6 @@
 import React from 'react'
 import { LineChart, Line, Tooltip, YAxis, XAxis, ResponsiveContainer, CartesianGrid } from 'recharts';
+import CustomTooltip from '../reuse/CustomTooltip';
 
 const ContributionGraph = ({ weeks,username }) => {
     let contributions = []
@@ -19,25 +20,6 @@ const ContributionGraph = ({ weeks,username }) => {
         5 + presentDay,
         36 + presentDay
     );
-
-    const CustomTooltip = ({ active, payload, label }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip backdrop-blur-sm shadow-sm bg-slate-50 p-2">
-                    <p className="intro font-semibold">
-                        {`Contribution : ${payload[0].value}`}
-                    </p>
-
-                    <p className="label">
-                        {`Date : ${label}`}
-                    </p>
-
-                </div>
-            );
-        }
-      
-        return null;
-    };
 
     const tickDate = value => {
         const roundVal = new Date(value).getDate();
@@ -63,7 +45,7 @@ const ContributionGraph = ({ weeks,username }) => {
                     >
                         <CartesianGrid/>
                         <Tooltip 
-                            content={<CustomTooltip />}
+                            content={<CustomTooltip customLabel1="Date" customLabel2="Contribution" />}
                         />
                         <XAxis 
                             dataKey="date"

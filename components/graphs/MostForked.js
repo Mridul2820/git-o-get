@@ -44,7 +44,7 @@ const MostForked = ({ repos }) => {
                         width={24}
                         tickFormatter={tickFork}
                     />
-                    <Tooltip content={<CustomTooltip />} />
+                    <Tooltip content={<CustomTooltip customLabel1="Repository" customLabel2="Fork Count" />} />
                     <Bar dataKey="forkCount" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>

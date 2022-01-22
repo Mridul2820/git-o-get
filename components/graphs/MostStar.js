@@ -44,7 +44,7 @@ const MostStar = ({ repos }) => {
                         width={24}
                         tickFormatter={tickFork}
                     />
-                    <Tooltip content={<CustomTooltip />} />
+                    <Tooltip content={<CustomTooltip customLabel1="Repository" customLabel2="Star Count" />} />
 
                     <Bar dataKey="stargazerCount" fill="#82ca9d" />
                 </BarChart>
