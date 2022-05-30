@@ -1,4 +1,4 @@
-# Contributing to Cyrpto Check 💥
+# Contributing to Git o Get 💥
 
 **Pull Request Guidelines**
 
