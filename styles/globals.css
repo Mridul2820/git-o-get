@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 body {
-    background: #f1f5f8;
+  background: #f1f5f8;
 }
 
 * {
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #9a65fd #d2c8ff;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #9a65fd #d2c8ff;
 }
 
 *::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 *::-webkit-scrollbar-track {
-    background: #c8c8ff;
+  background: #c8c8ff;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #9a65fd;
+  background-color: #9a65fd;
 }

@@ -1,7 +1,7 @@
 {
-    "extends": "next",
-    "rules": {
-        "@next/next/no-img-element": "off",
-        "@next/next/no-document-import-in-page": "off"
-    }
+  "extends": "next",
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "@next/next/no-document-import-in-page": "off"
+  }
 }
