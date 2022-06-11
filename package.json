@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
@@ -35,6 +36,8 @@
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.4.5",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.6.1",
     "tailwindcss": "^3.0.12"
   }
 }
