@@ -1,12 +1,16 @@
-import React from 'react';
-import { FaSearch } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaSearch, FaSpinner } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 const Search = ({ height }) => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
+
+    if (loading) return; // Prevent multiple requests
+    setLoading(true);
 
     const fields = Array.from(event.currentTarget.elements);
     const username = fields.find((field) => field.name === 'username')?.value;
@@ -30,7 +34,13 @@ const Search = ({ height }) => {
         type="submit"
         className="bg-purple-mid text-white h-full px-4 rounded-r-md"
       >
-        <FaSearch />
+        {loading ? (
+          <div className="animate-spin">
+            <FaSpinner />
+          </div>
+        ) : (
+          <FaSearch />
+        )}
       </button>
     </form>
   );
