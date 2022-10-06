@@ -87,7 +87,7 @@ const ProfileInfo = ({ user }) => {
           <div className="flex items-center gap-1 mt-2">
             <BsLink45Deg size={22} />
             <a
-              href={user.websiteUrl}
+              href={`https://${user.websiteUrl}`}
               target="_blank"
               rel="noreferrer"
               className="hover:underline hover:text-gray-800"
