@@ -34,6 +34,7 @@
 - Profile Stats
 - Profile Contribution Calander
 - List of Followers(last 100)
+- Pinned Repositories
 - Most forked Repository Graph
 - Most Stared Repository Graph
 
