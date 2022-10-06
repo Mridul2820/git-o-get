@@ -125,7 +125,7 @@ const LanguagePie = ({ repositories }) => {
 
   return (
     <motion.div
-      className="p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[400px] max-w-[380px] bg-white"
+      className="p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[420px] max-w-[380px] bg-white"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
