@@ -63,6 +63,24 @@ export const GET_USER = gql`
       ) {
         totalCount
       }
+      pinnedItems(types:REPOSITORY, first: 100) {
+        nodes {
+          ... on Repository {
+            id
+            name
+            url
+            stargazerCount
+            shortDescriptionHTML
+            watchers {
+              totalCount
+            }
+            forks {
+              totalCount
+            }
+          }
+        }
+        totalCount
+      }
       contributionsCollection {
         contributionCalendar {
           totalContributions

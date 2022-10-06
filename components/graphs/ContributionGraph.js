@@ -33,7 +33,7 @@ const ContributionGraph = ({ weeks, username }) => {
   };
 
   return (
-    <div className="py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[400px] bg-white mt-5 relative">
+    <div className="py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[400px] bg-white relative">
       <p className="text-center mb-5 text-xl font-semibold">
         {username}&apos;s Contribution Graph
       </p>
