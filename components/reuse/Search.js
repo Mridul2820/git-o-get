@@ -27,7 +27,7 @@ const Search = ({ height }) => {
         type="text"
         name="username"
         placeholder="Search Username"
-        className="px-2 outline-none border-2 border-purple-400 rounded-l-md focus:shadow-bs3 w-full h-full"
+        className="dark:bg-dark-color dark:text-white px-2 outline-none border-2 border-purple-400 rounded-l-md focus:shadow-bs3 w-full h-full"
       />
       <button
         aria-label="search"

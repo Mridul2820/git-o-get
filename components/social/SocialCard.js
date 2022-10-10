@@ -20,7 +20,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
 
   return (
     <motion.div
-      className="flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[442px] bg-white"
+      className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[442px] bg-white"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
@@ -31,7 +31,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
         </div>
       ) : (
         <>
-          <div className="flex flex-col justify-center gap-3">
+          <div className="dark:bg-dark-color dark:text-white flex flex-col justify-center gap-3">
             <p className="text-center text-xl font-semibold">Social Card</p>
             <CradImage className="relative rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 border-2 border-slate-300">
               <img

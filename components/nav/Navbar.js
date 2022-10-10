@@ -6,7 +6,7 @@ import { BsGithub } from 'react-icons/bs';
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-center items-center bg-white w-full">
+    <nav className="dark:bg-dark-color dark:border-b dark:border-gray-500 flex justify-center items-center bg-white w-full">
       <div className="flex justify-between items-center w-full max-w-[1500px] mx-auto px-5 py-4">
         <Link href="/">
           <a className="h-9 w-9">
