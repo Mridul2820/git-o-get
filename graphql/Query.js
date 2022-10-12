@@ -80,6 +80,7 @@ export const GET_USER = gql`
             languages(first: 1, orderBy: {direction: DESC, field: SIZE}) {
               nodes {
                 ... on Language {
+                  id
                   name
                   color
                 }
