@@ -1,5 +1,7 @@
+import { ThemeProvider } from 'next-themes';
 import { RecoilRoot } from 'recoil';
 import '../styles/globals.css';
+import ThemeButton from '../components/themeButton/ThemeButton';
 
 // SEO
 import { DefaultSeo } from 'next-seo';
@@ -16,8 +18,11 @@ function MyApp({ Component, pageProps }) {
     <ApolloProvider client={client}>
       <RecoilRoot>
         <DefaultSeo {...SEO} />
-        <Component {...pageProps} />
-        <Footer />
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+          <ThemeButton />
+          <Footer />
+        </ThemeProvider>
       </RecoilRoot>
     </ApolloProvider>
   );

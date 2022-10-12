@@ -9,7 +9,7 @@ const CustomTooltip = ({
 }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom-tooltip backdrop-blur-sm shadow-sm bg-slate-50 p-2">
+      <div className="custom-tooltip backdrop-blur-sm shadow-sm bg-slate-50 p-2 dark:bg-dark-gray dark:text-white dark:border dark:border-gray-500">
         <p className="flex gap-3">
           <span>{customLabel1} : </span>
           <span className="font-semibold">{label}</span>

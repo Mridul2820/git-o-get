@@ -4,10 +4,10 @@ import Search from '../components/reuse/Search';
 
 const Home = () => {
   const FreturePoint =
-    'text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4';
+    'dark:bg-dark-gray dark:border dark:border-gray-700 text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4';
 
   return (
-    <main className="py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center">
+    <main className="dark:bg-dark-color dark:text-white py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center">
       <h1 className="text-center text-2xl md:text-3xl font-bold">
         Git O Get - Github Profile Stats and Graphs in One Place
       </h1>
@@ -23,7 +23,7 @@ const Home = () => {
             className="w-full max-w-[500px] mx-auto"
           />
         </div>
-        <div className="flex flex-col items-center justify-center gap-4 p-5 shadow-bs3 hover:shadow-bs2 border-2 border-slate-400 rounded-md w-full md:w-[50%] h-full bg-white">
+        <div className="flex flex-col items-center justify-center dark:bg-dark-color dark:text-white dark:border-gray-500 gap-4 p-5 shadow-bs3 hover:shadow-bs2 border-2 border-slate-400 rounded-md w-full md:w-[50%] h-full bg-white">
           <div className="p-3 w-16 h-16 rounded-full shadow-bs2 border-2 border-slate-400">
             <img
               src="/logo.png"
