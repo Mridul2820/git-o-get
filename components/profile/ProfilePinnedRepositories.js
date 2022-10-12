@@ -45,7 +45,7 @@ const ProfilePinnedRepositories = ({ username, pinnedRepositories }) => {
                   <img 
                     src={"/svg/fork.svg"}
                     alt="Forks"
-                    className="w-3.5 inline"
+                    className="w-3 inline"
                   />
                   {repo.forks.totalCount}
                 </p>
