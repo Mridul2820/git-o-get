@@ -21,6 +21,11 @@ const ProfilePinnedRepositories = ({ username, pinnedRepositories }) => {
             <a className="flex items-center gap-3 rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300">
               <div className="w-full">
                 <p className="text-base font-semibold">
+                  <img 
+                    src={"/svg/repository.svg"}
+                    alt="Repository"
+                    className="w-3.5 inline mr-1"
+                  />
                   {repo.name}
                 </p>
                 <p className="font-normal text-sm">
