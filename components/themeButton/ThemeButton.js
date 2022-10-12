@@ -17,7 +17,7 @@ const ThemeButton = () => {
   if (currentTheme === 'dark') {
     return (
       <button
-        className="flex items-center justify-center fixed w-12 h-12 bottom-9 right-10 bg-gray-800 rounded-md border border-gray-700  hover:border-gray-600 hover:bg-dark-color p-3"
+        className="flex items-center justify-center fixed w-12 h-12 bottom-4 right-3  bg-gray-800 rounded-md border border-gray-700  hover:border-gray-600 hover:bg-dark-color p-3 md:bottom-7 md:right-6"
         onClick={() => setTheme('light')}
       >
         {MdOutlineLightMode()}
@@ -26,7 +26,7 @@ const ThemeButton = () => {
   } else {
     return (
       <button
-        className="flex items-center justify-center fixed w-12 h-12 bottom-9 right-10 bg-dark-gray text-white rounded-md border border-gray-700  hover:bg-gray-700 p-3"
+        className="flex items-center justify-center fixed w-12 h-12 bottom-4 right-3  bg-dark-gray text-white rounded-md border border-gray-700  hover:bg-gray-700 p-3 md:bottom-7 md:right-6"
         onClick={() => setTheme('dark')}
       >
         {BsFillMoonStarsFill()}
