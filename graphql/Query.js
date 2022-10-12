@@ -77,6 +77,14 @@ export const GET_USER = gql`
             forks {
               totalCount
             }
+            languages(first: 1, orderBy: {direction: DESC, field: SIZE}) {
+              nodes {
+                ... on Language {
+                  name
+                  color
+                }
+              }
+            }
           }
         }
         totalCount
