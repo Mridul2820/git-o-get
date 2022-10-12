@@ -94,7 +94,7 @@ const LanguagePie = ({ repositories }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2">
+        <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2 dark:bg-dark-gray dark:text-white dark:border dark:border-gray-500">
           {payload[0].name +
             ': ' +
             ((payload[0].value * 100) / sum_of_all_values).toFixed(2) +
