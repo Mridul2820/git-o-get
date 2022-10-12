@@ -30,11 +30,15 @@ const MostForked = ({ repos }) => {
   };
 
   return (
-    <div className="p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full bg-white">
+    <div className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full bg-white">
       <p className="text-center mb-5 text-xl font-semibold">
         Most Forked Repositories
       </p>
-      <ResponsiveContainer width="100%" height={420}>
+      <ResponsiveContainer
+        className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700"
+        width="100%"
+        height={420}
+      >
         <BarChart
           width={200}
           height={250}

@@ -3,6 +3,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       gridTemplateColumns: {
@@ -42,11 +43,13 @@ module.exports = {
         'purple-mid': 'rgb(154, 101, 253)',
         'purple-lite': 'rgb(170, 153, 255)',
       },
-      color: {
+      colors: {
         'purple-black': 'rgb(58, 53, 111)',
         'purple-dark': 'rgb(86, 76, 137)',
         'purple-mid': 'rgb(154, 101, 253)',
         'purple-lite': 'rgb(170, 153, 255)',
+        'dark-color': '#0d1117',
+        'dark-gray': '#161b22',
       },
     },
   },

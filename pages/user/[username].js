@@ -80,7 +80,7 @@ const UserName = ({ user, ogImageUrl }) => {
     <>
       <NextSeo {...SEO} />
       <Navbar />
-      <main className="px-5 py-10 max-w-[1500px] mx-auto min-h-screen">
+      <main className="dark:bg-dark-color dark:text-white px-5 md:px-10 py-10 mx-auto min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="w-full flex gap-5 flex-col">
             <ProfileInfo user={user} />

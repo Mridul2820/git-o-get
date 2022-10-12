@@ -94,7 +94,7 @@ const LanguagePie = ({ repositories }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2">
+        <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2 dark:bg-dark-gray dark:text-white dark:border dark:border-gray-500">
           {payload[0].name +
             ': ' +
             ((payload[0].value * 100) / sum_of_all_values).toFixed(2) +
@@ -125,7 +125,7 @@ const LanguagePie = ({ repositories }) => {
 
   return (
     <motion.div
-      className="p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[400px] max-w-[380px] bg-white"
+      className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[400px] max-w-[380px] bg-white"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
