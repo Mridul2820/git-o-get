@@ -52,6 +52,9 @@ module.exports = {
         'dark-gray': '#161b22',
       },
     },
+    borderWidth: {
+      default: '0px',
+    },
   },
   plugins: [
     // require('@tailwindcss/typography'),
