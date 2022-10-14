@@ -39,7 +39,7 @@ const useColorTheme = () => {
 const ProfileCalendar = ({ username }) => {
   return (
     <CalenderWrap
-      className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 flex flex-col gap-3 items-center p-3 shadow-bs1 rounded-md w-full bg-white"
+      className="dark:bg-dark-color dark:text-white border dark:border-gray-700 flex flex-col gap-3 items-center p-3 shadow-bs1 rounded-md w-full bg-white"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

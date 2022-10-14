@@ -4,7 +4,7 @@ import React from 'react';
 
 const ProfileFollowers = ({ username, followers }) => {
   return (
-    <div className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 p-3 shadow-bs1 rounded-md h-full w-full bg-white">
+    <div className="dark:bg-dark-color dark:text-white border dark:border-gray-700 p-3 shadow-bs1 rounded-md h-full w-full bg-white">
       <p className="text-center mb-5 text-xl font-semibold">
         {'@'}
         {username} Follwers {'(Total: '}
