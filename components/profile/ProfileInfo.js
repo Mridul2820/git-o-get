@@ -65,7 +65,7 @@ const ProfileInfo = ({ user }) => {
             <HiOutlineMail size={20} />
             <a
               href={`mailto:${user.email}`}
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 hover:dark:text-white"
             >
               {user.email}
             </a>

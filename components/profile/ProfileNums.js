@@ -82,7 +82,7 @@ const ProfileNums = ({
           >
             <Icon className={item.color}>{item.icon}</Icon>
             <p className="text-2xl font-bold mt-2 -mb-1">{item.value}</p>
-            <p className="text-gray-600">{item.label}</p>
+            <p className="text-gray-600 dark:text-gray-400">{item.label}</p>
           </div>
         ))}
       </div>

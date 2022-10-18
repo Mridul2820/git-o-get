@@ -27,7 +27,7 @@ const ProfileFollowers = ({ username, followers }) => {
                   {'@'}
                   {follow.login}
                 </p>
-                <p className="font-normal text-slate-600 text-sm">
+                <p className="font-normal text-slate-600 text-sm dark:text-slate-400">
                   {follow.name}
                 </p>
               </div>
