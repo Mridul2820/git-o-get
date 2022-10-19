@@ -4,7 +4,7 @@ import Search from '../components/reuse/Search';
 
 const Home = () => {
   const FreturePoint =
-    'dark:bg-dark-gray dark:border dark:border-gray-700 text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4';
+    'dark:bg-dark-gray border dark:border-gray-700 text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4';
 
   return (
     <main className="dark:bg-dark-color dark:text-white py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center">

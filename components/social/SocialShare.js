@@ -30,7 +30,7 @@ const SocialShare = ({ username }) => {
   };
 
   const ShareClass =
-    'dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 flex justify-center items-center text-white shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 rounded-full';
+    'dark:bg-dark-color dark:text-white border dark:border-gray-700 flex justify-center items-center text-white shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 rounded-full';
 
   return (
     <div className="flex justify-center items-center flex-col gap-4 mb-4">

@@ -67,7 +67,7 @@ const ProfileNums = ({
 
   return (
     <motion.div
-      className="shadow-bs1 rounded-md w-full bg-white p-5 dark:bg-dark-color dark:text-white dark:border dark:border-gray-700"
+      className="shadow-bs1 rounded-md w-full bg-white p-5 dark:bg-dark-color dark:text-white border dark:border-gray-700"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
@@ -77,12 +77,12 @@ const ProfileNums = ({
         {items.map((item) => (
           <div
             key={item.id}
-            className="px-5 py-3 flex flex-col justify-between items-center rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300 cursor-default dark:bg-dark-gray dark:text-white dark:border dark:border-gray-700"
+            className="px-5 py-3 flex flex-col justify-between items-center rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300 cursor-default dark:bg-dark-gray dark:text-white dark:border-gray-700"
             title={item.title}
           >
             <Icon className={item.color}>{item.icon}</Icon>
             <p className="text-2xl font-bold mt-2 -mb-1">{item.value}</p>
-            <p className="text-gray-600">{item.label}</p>
+            <p className="text-gray-600 dark:text-gray-400">{item.label}</p>
           </div>
         ))}
       </div>

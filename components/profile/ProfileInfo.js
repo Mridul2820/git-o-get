@@ -20,7 +20,7 @@ const ProfileInfo = ({ user }) => {
 
   return (
     <motion.div
-      className="py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white dark:bg-dark-color dark:text-white dark:border dark:border-gray-700"
+      className="py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white dark:bg-dark-color dark:text-white border dark:border-gray-700"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
@@ -65,7 +65,7 @@ const ProfileInfo = ({ user }) => {
             <HiOutlineMail size={20} />
             <a
               href={`mailto:${user.email}`}
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 hover:dark:text-white"
             >
               {user.email}
             </a>
