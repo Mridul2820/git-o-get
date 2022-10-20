@@ -8,14 +8,19 @@ const Search = ({ height }) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-
     if (loading) return; // Prevent multiple requests
-    setLoading(true);
 
     const fields = Array.from(event.currentTarget.elements);
     const username = fields.find((field) => field.name === 'username')?.value;
 
-    router.push(`/user/${username}`);
+    if (username && !hasWhiteSpaceText(username)) {
+      setLoading(true);
+      router.push(`/user/${username}`);
+    }
+  };
+
+  const hasWhiteSpaceText = (text) => {
+      return /\s/g.test(text);
   };
 
   return (
