@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaSearch, FaSpinner } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import { AppContext } from '../../pages/_app';
 
 const Search = ({ height }) => {
+  const { isLoading, toggleLoading } = useContext(AppContext)
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -15,12 +17,13 @@ const Search = ({ height }) => {
 
     if (username && !hasWhiteSpaceText(username)) {
       setLoading(true);
+      toggleLoading(true)
       router.push(`/user/${username}`);
     }
   };
 
   const hasWhiteSpaceText = (text) => {
-      return /\s/g.test(text);
+    return /\s/g.test(text);
   };
 
   return (
@@ -39,7 +42,7 @@ const Search = ({ height }) => {
         type="submit"
         className="bg-purple-mid text-white h-full px-4 rounded-r-md"
       >
-        {loading ? (
+        {isLoading ? (
           <div className="animate-spin">
             <FaSpinner />
           </div>

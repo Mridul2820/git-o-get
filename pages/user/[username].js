@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { v2 as cloudinary } from 'cloudinary';
 
@@ -8,6 +8,7 @@ import { client } from '../../client';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import NotFound from '../../components/404/NotFound';
+import { AppContext } from '../_app';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
 const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
@@ -34,32 +35,33 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 const ContributionGraph = dynamic(() =>
   import('../../components/graphs/ContributionGraph')
 );
-
 const { SITE_URL } = process.env;
 
 const UserName = ({ user, ogImageUrl }) => {
+  const { toggleLoading } = useContext(AppContext)
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-
     setTimeout(() => {
       setLoading(false);
     }, 2500);
   }, [router.query.username]);
 
+  useEffect(() => {
+    toggleLoading(false)
+  }, [user])
+
   const SEO = {
-    title: `${user?.name ? user.name : 'User'} (@${
-      user?.login
-    }) : Github Profile Stats and Graphs in One Place`,
+    title: `${user?.name ? user.name : 'User'} (@${user?.login
+      }) : Github Profile Stats and Graphs in One Place`,
     description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
     canonical: `${SITE_URL}/user/${user?.login}`,
 
     openGraph: {
-      title: `${user?.name ? user.name : 'User'} (@${
-        user?.login
-      }) : Github Profile Stats and Graphs in One Place`,
+      title: `${user?.name ? user.name : 'User'} (@${user?.login
+        }) : Github Profile Stats and Graphs in One Place`,
       description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
       url: `${SITE_URL}/user/${user?.login}`,
 
@@ -130,10 +132,11 @@ export async function getServerSideProps({ params }) {
       username: params.username,
     },
   });
-
-  const errorCode = data.user === null && true;
-
-  const user = data.user;
+  const errorCode = null;
+  let user = []
+  if (data.user !== null) {
+    user = data.user;
+  }
 
   cloudinary.config({
     cloud_name: CLOUD_NAME,
