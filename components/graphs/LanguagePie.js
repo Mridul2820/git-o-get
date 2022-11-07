@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { sumBy } from 'lodash';
-import React, { useState } from 'react';
 import {
   PieChart,
   Pie,
