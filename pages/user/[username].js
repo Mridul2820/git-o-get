@@ -12,7 +12,6 @@ import { AppContext } from '../_app';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
 const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
-
 const ProfileInfo = dynamic(() =>
   import('../../components/profile/ProfileInfo')
 );
@@ -22,11 +21,9 @@ const ProfileNums = dynamic(() =>
 const ProfileFollowers = dynamic(() =>
   import('../../components/profile/ProfileFollowers')
 );
-
 const ProfileCalendar = dynamic(() =>
   import('../../components/profile/ProfileCalendar')
 );
-
 const LanguagePie = dynamic(() =>
   import('../../components/graphs/LanguagePie')
 );

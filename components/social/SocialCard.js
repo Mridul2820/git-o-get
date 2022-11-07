@@ -20,7 +20,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
 
   return (
     <motion.div
-      className="dark:bg-dark-color dark:text-white border dark:border-gray-700 flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[442px] bg-white"
+      className="dark:bg-dark-color dark:text-white border dark:border-gray-700 flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full md:min-h-[442px] bg-white"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

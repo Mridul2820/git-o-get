@@ -18,12 +18,10 @@ const ProfileInfo = ({ user }) => {
         <img
           src={user.avatarUrl}
           alt={user.login}
-          height={80}
-          width={80}
-          className="rounded-full"
+          className="rounded-full h-16 md:h-20 w-16 md:w-20"
         />
         <div className="">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-xl md:text-2xl font-bold">
             <a href={user.url} target="_blank" rel="noreferrer">
               {'@'}
               {user.login}
@@ -66,7 +64,7 @@ const ProfileInfo = ({ user }) => {
               href={`https://twitter.com/${user.twitterUsername}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
               {'@'}
               {user.twitterUsername}
@@ -74,13 +72,13 @@ const ProfileInfo = ({ user }) => {
           </div>
         )}
         {user.websiteUrl && (
-          <div className="flex items-center gap-1 mt-2">
+          <div className="flex items-center gap-1 mt-2 dark:text-gray-300">
             <BsLink45Deg size={22} />
             <a
               href={`https://${user.websiteUrl}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
               {user.websiteUrl}
             </a>
