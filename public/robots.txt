@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://git-o-get.mridul.tech/sitemap.xml

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { AppContext } from '../../pages/_app';
 
 const Search = ({ height }) => {
-  const { isLoading, toggleLoading } = useContext(AppContext)
+  const { isLoading, toggleLoading } = useContext(AppContext);
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +17,7 @@ const Search = ({ height }) => {
 
     if (username && !hasWhiteSpaceText(username)) {
       setLoading(true);
-      toggleLoading(true)
+      toggleLoading(true);
       router.push(`/user/${username}`);
     }
   };
@@ -40,7 +40,7 @@ const Search = ({ height }) => {
       <button
         aria-label="search"
         type="submit"
-        className="bg-purple-mid text-white h-full px-4 rounded-r-md"
+        className="bg-purple-mid text-white h-full px-2 md:px-4 rounded-r-md"
       >
         {isLoading ? (
           <div className="animate-spin">

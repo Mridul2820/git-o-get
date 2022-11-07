@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BiBuildings } from 'react-icons/bi';
 import { IoLocationOutline } from 'react-icons/io5';
@@ -8,16 +7,6 @@ import { BsLink45Deg } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 
 const ProfileInfo = ({ user }) => {
-  const setURL = (url) => {
-    if (url.protocol === 'https:') {
-      return url;
-    } else if (url.protocol === 'http:') {
-      return url;
-    } else {
-      return 'https://' + url;
-    }
-  };
-
   return (
     <motion.div
       className="py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white dark:bg-dark-color dark:text-white border dark:border-gray-700"
@@ -26,13 +15,12 @@ const ProfileInfo = ({ user }) => {
       animate={{ scale: 1 }}
     >
       <div className="flex items-center gap-3">
-        <Image
+        <img
           src={user.avatarUrl}
           alt={user.login}
           height={80}
           width={80}
           className="rounded-full"
-          priority={true}
         />
         <div className="">
           <h1 className="text-2xl font-bold">

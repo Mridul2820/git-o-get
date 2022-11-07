@@ -21,18 +21,17 @@ const reducer = (state, action) => {
   }
   return state;
 };
-const initialStates = { isLoading: false }
+const initialStates = { isLoading: false };
 
 function MyApp({ Component, pageProps }) {
-
-  const [state, dispatch] = useReducer(reducer, initialStates)
+  const [state, dispatch] = useReducer(reducer, initialStates);
 
   const toggleLoading = async (flag) => {
     dispatch({
       type: 'LOADING_TOGGLE',
-      payload: flag
+      payload: flag,
     });
-  }
+  };
 
   return (
     <ApolloProvider client={client}>
@@ -46,7 +45,7 @@ function MyApp({ Component, pageProps }) {
           </AppContext.Provider>
         </ThemeProvider>
       </RecoilRoot>
-    </ApolloProvider >
+    </ApolloProvider>
   );
 }
 

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -15,7 +14,7 @@ const ProfileFollowers = ({ username, followers }) => {
         {followers?.nodes.map((follow) => (
           <Link href={`/user/${follow.login}`} key={follow.id}>
             <a className="dark:bg-dark-gray dark:border-gray-700 flex items-center gap-3 rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300">
-              <Image
+              <img
                 src={follow.avatarUrl}
                 alt={follow.login}
                 height={40}
