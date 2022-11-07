@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Search from '../reuse/Search';
 import { BsGithub } from 'react-icons/bs';
@@ -9,23 +8,23 @@ const Navbar = () => {
     <nav className="dark:bg-dark-color border-b dark:border-gray-500 flex justify-center items-center bg-white w-full">
       <div className="flex justify-between items-center w-full max-w-[1500px] mx-auto px-5 py-4">
         <Link href="/">
-          <a className="h-9 w-9">
-            <Image
+          <a>
+            <img
               src="/logo.png"
               alt="logo"
-              height={36}
-              width={36}
-              priority={true}
+              className="w-10 object-cover align-middle"
             />
           </a>
         </Link>
-        <Search height="h-9" />
+        <div className="mx-3">
+          <Search height="h-9" />
+        </div>
         <a
           href="https://github.com/Mridul2820/git-o-get"
           target="_blank"
           rel="noreferrer"
         >
-          <BsGithub size={24} />
+          <BsGithub size={28} />
         </a>
       </div>
     </nav>

@@ -40,7 +40,7 @@ const Search = ({ height }) => {
       <button
         aria-label="search"
         type="submit"
-        className="bg-purple-mid text-white h-full px-4 rounded-r-md"
+        className="bg-purple-mid text-white h-full px-2 md:px-4 rounded-r-md"
       >
         {isLoading ? (
           <div className="animate-spin">
