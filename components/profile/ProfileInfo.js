@@ -18,12 +18,10 @@ const ProfileInfo = ({ user }) => {
         <img
           src={user.avatarUrl}
           alt={user.login}
-          height={80}
-          width={80}
-          className="rounded-full"
+          className="rounded-full h-16 md:h-20 w-16 md:w-20"
         />
         <div className="">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-xl md:text-2xl font-bold">
             <a href={user.url} target="_blank" rel="noreferrer">
               {'@'}
               {user.login}
