@@ -38,7 +38,7 @@ const ContributionGraph = dynamic(() =>
 const { SITE_URL } = process.env;
 
 const UserName = ({ user, ogImageUrl }) => {
-  const { toggleLoading } = useContext(AppContext)
+  const { toggleLoading } = useContext(AppContext);
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
@@ -50,18 +50,21 @@ const UserName = ({ user, ogImageUrl }) => {
   }, [router.query.username]);
 
   useEffect(() => {
-    toggleLoading(false)
-  }, [user])
+    toggleLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   const SEO = {
-    title: `${user?.name ? user.name : 'User'} (@${user?.login
-      }) : Github Profile Stats and Graphs in One Place`,
+    title: `${user?.name ? user.name : 'User'} (@${
+      user?.login
+    }) : Github Profile Stats and Graphs in One Place`,
     description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
     canonical: `${SITE_URL}/user/${user?.login}`,
 
     openGraph: {
-      title: `${user?.name ? user.name : 'User'} (@${user?.login
-        }) : Github Profile Stats and Graphs in One Place`,
+      title: `${user?.name ? user.name : 'User'} (@${
+        user?.login
+      }) : Github Profile Stats and Graphs in One Place`,
       description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
       url: `${SITE_URL}/user/${user?.login}`,
 
@@ -133,7 +136,7 @@ export async function getServerSideProps({ params }) {
     },
   });
   const errorCode = null;
-  let user = []
+  let user = [];
   if (data.user !== null) {
     user = data.user;
   }
