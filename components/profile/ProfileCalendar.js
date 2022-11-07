@@ -56,9 +56,22 @@ const ProfileCalendar = ({ username }) => {
 };
 
 const CalenderWrap = styled(motion.div)`
+  .react-activity-calendar__count {
+    @media only screen and (max-width: 600px) {
+      font-size: 15px;
+    }
+  }
+
   .react-activity-calendar__legend-colors {
     @media only screen and (max-width: 600px) {
-      display: none;
+      span {
+        display: none;
+      }
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 `;
