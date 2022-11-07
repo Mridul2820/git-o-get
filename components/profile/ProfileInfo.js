@@ -64,7 +64,7 @@ const ProfileInfo = ({ user }) => {
               href={`https://twitter.com/${user.twitterUsername}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
               {'@'}
               {user.twitterUsername}
@@ -72,13 +72,13 @@ const ProfileInfo = ({ user }) => {
           </div>
         )}
         {user.websiteUrl && (
-          <div className="flex items-center gap-1 mt-2">
+          <div className="flex items-center gap-1 mt-2 dark:text-gray-300">
             <BsLink45Deg size={22} />
             <a
               href={`https://${user.websiteUrl}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
               {user.websiteUrl}
             </a>
