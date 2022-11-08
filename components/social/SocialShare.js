@@ -4,9 +4,11 @@ import { BiLinkAlt } from 'react-icons/bi';
 import { useState } from 'react';
 
 const SocialShare = ({ username }) => {
-  const { SITE_URL } = process.env;
-  const shareText = `Check out @${username}'s GitHub profile!`;
   const [copySuccess, setCopySuccess] = useState('Copy to Clipboard');
+
+  const { SITE_URL } = process.env;
+  const shareText = `Check out ${username}'s GitHub profile!`;
+  const shareUrl = `${SITE_URL}/profile/${username}`;
 
   // copy function
   const copyToClipBoard = (copyMe) => {
@@ -39,7 +41,7 @@ const SocialShare = ({ username }) => {
       <SocialWrap className="flex justify-center items-center gap-4">
         <a
           className={`twitter ${ShareClass}`}
-          href={`http://twitter.com/share?text=${shareText}&url=${SITE_URL}/user/${username}`}
+          href={`http://twitter.com/share?text=${shareText}&url=${shareUrl}`}
           target="new"
           data-social-type="vertical"
           data-social-tool="twitter"
@@ -51,7 +53,7 @@ const SocialShare = ({ username }) => {
         </a>
 
         <a
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${SITE_URL}/user/${username}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
           target="new"
           className={`linkedin ${ShareClass}`}
         >
@@ -59,7 +61,7 @@ const SocialShare = ({ username }) => {
         </a>
 
         <CopyLink
-          onClick={() => copyToClipBoard(`${SITE_URL}/user/${username}`)}
+          onClick={() => copyToClipBoard(`${shareUrl}`)}
           onMouseEnter={() => setCopySuccess('Copy to Clipboard')}
           className={`copy ${ShareClass}`}
         >
