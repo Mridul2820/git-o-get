@@ -110,4 +110,8 @@ npm run dev
 
 <a href="CONTRIBUTING.md">Contributing Guide</a>
 
-## All the best! 🥇
+## ⭐ Project Contributors
+
+<a href="https://github.com/Mridul2820/git-o-get/graphs/contributors" align="center">
+  <img src="https://contrib.rocks/image?repo=Mridul2820/git-o-get" />
+</a>
