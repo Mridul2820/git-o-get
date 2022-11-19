@@ -3,9 +3,6 @@ import Image from 'next/image';
 import Search from '../components/reuse/Search';
 
 const Home = () => {
-  const FreturePoint =
-    'dark:bg-dark-gray border dark:border-gray-700 text-center font-semibold py-2 px-2 sm:px-4 bg-slate-200 rounded-md cursor-pointer shadow-bs4';
-
   return (
     <main className="dark:bg-dark-color dark:text-white py-8 px-5 h-full md:h-[calc(100vh-48px)] flex gap-10 flex-col justify-center items-center">
       <h1 className="text-center text-2xl md:text-3xl font-bold">
@@ -34,22 +31,22 @@ const Home = () => {
             />
           </div>
           <h2 className="text-center text-base sm:text-xl font-bold">
-            Serach Your Github Username
+            Search Your Github Username
           </h2>
           <Search height="h-12" />
           <p className="font-semibold text-xl">Features</p>
 
           <ul className="flex justify-center flex-wrap gap-3 select-none">
-            <li className={FreturePoint}>Profile Details</li>
-            <li className={FreturePoint}>Language Crad</li>
-            <li className={FreturePoint}>Shareable Social Card</li>
-            <li className={FreturePoint}>Profile Stats</li>
-            <li className={FreturePoint}>Profile Contribution Calander</li>
-            <li className={FreturePoint}>
+            <li className="feature-point">Profile Details</li>
+            <li className="feature-point">Language Card</li>
+            <li className="feature-point">Shareable Social Card</li>
+            <li className="feature-point">Profile Stats</li>
+            <li className="feature-point">Profile Contribution Calander</li>
+            <li className="feature-point">
               List of Followers{'('}last 100{')'}
             </li>
-            <li className={FreturePoint}>Most forked Repository Graph</li>
-            <li className={FreturePoint}>Most Stared Repository Graph</li>
+            <li className="feature-point">Most forked Repository Graph</li>
+            <li className="feature-point">Most Stared Repository Graph</li>
           </ul>
         </div>
       </div>

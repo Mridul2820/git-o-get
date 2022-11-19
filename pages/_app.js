@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { RecoilRoot } from 'recoil';
-import '../styles/globals.css';
+import '../styles/tailwind.scss';
 import ThemeButton from '../components/themeButton/ThemeButton';
 
 // SEO

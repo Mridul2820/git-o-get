@@ -8,13 +8,11 @@ const Navbar = () => {
     <nav className="dark:bg-dark-color border-b dark:border-gray-500 flex justify-center items-center bg-white w-full">
       <div className="flex justify-between items-center w-full max-w-[1500px] mx-auto px-5 py-4">
         <Link href="/">
-          <a>
-            <img
-              src="/logo.png"
-              alt="logo"
-              className="w-10 object-cover align-middle"
-            />
-          </a>
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="w-10 object-cover align-middle"
+          />
         </Link>
         <div className="mx-3">
           <Search height="h-9" />
