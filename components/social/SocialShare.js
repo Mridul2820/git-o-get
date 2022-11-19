@@ -31,16 +31,13 @@ const SocialShare = ({ username }) => {
     }
   };
 
-  const ShareClass =
-    'dark:bg-dark-color dark:text-white border dark:border-gray-700 flex justify-center items-center text-white shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 rounded-full';
-
   return (
     <div className="flex justify-center items-center flex-col gap-4 mb-4">
       <p className="text-center text-2xl font-bold select-none">Share Card</p>
 
       <SocialWrap className="flex justify-center items-center gap-4">
         <a
-          className={`twitter ${ShareClass}`}
+          className="twitter share-item"
           href={`http://twitter.com/share?text=${shareText}&url=${shareUrl}`}
           target="new"
           data-social-type="vertical"
@@ -55,7 +52,7 @@ const SocialShare = ({ username }) => {
         <a
           href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
           target="new"
-          className={`linkedin ${ShareClass}`}
+          className="linkedin share-item"
         >
           <FaLinkedin size="20px" />
         </a>
@@ -63,7 +60,7 @@ const SocialShare = ({ username }) => {
         <CopyLink
           onClick={() => copyToClipBoard(`${shareUrl}`)}
           onMouseEnter={() => setCopySuccess('Copy to Clipboard')}
-          className={`copy ${ShareClass}`}
+          className="copy share-item"
         >
           <BiLinkAlt size="20px" />
           <CopyMessage className="absolute whitespace-nowrap text-sm rounded-sm shadow-md bg-purple-mid">
