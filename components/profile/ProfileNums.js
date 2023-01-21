@@ -5,6 +5,7 @@ import { AiOutlinePullRequest } from 'react-icons/ai';
 import { VscIssues } from 'react-icons/vsc';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { v4 as uuidv4 } from 'uuid';
 
 const ProfileNums = ({
   followers,
@@ -76,7 +77,7 @@ const ProfileNums = ({
       <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
         {items.map((item) => (
           <div
-            key={item.id}
+            key={uuidv4()}
             className="px-5 py-3 flex flex-col justify-between items-center rounded-md shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 border-2 border-slate-300 cursor-default dark:bg-dark-gray dark:text-white dark:border-gray-700"
             title={item.title}
           >

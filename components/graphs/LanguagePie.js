@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { sumBy } from 'lodash';
+import { v4 as uuidv4 } from 'uuid';
 import {
   PieChart,
   Pie,
@@ -110,7 +111,7 @@ const LanguagePie = ({ repositories }) => {
       <div className="flex justify-center mb-2">
         <ul className="mx-auto">
           {formatLangs?.map((entry, index) => (
-            <li key={`item-${index}`} className="flex items-center gap-2">
+            <li key={uuidv4()} className="flex items-center gap-2">
               <div className="h-3 w-3" style={{ background: entry.color }} />
               <span className="text-sm select-none">{entry.name}</span>
               <span>
@@ -146,7 +147,7 @@ const LanguagePie = ({ repositories }) => {
           >
             {formatLangs.map((entry, index) => (
               <Cell
-                key={`cell-${index}`}
+                key={uuidv4()}
                 fill={entry.color}
                 onMouseOver={() => onPieEnter(index)}
               />
