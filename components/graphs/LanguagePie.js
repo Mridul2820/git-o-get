@@ -9,7 +9,6 @@ import {
   Cell,
   ResponsiveContainer,
   Tooltip,
-  Legend,
 } from 'recharts';
 
 const LanguagePie = ({ repositories }) => {
@@ -110,7 +109,7 @@ const LanguagePie = ({ repositories }) => {
     return (
       <div className="flex justify-center mb-2">
         <ul className="mx-auto">
-          {formatLangs?.map((entry, index) => (
+          {formatLangs?.map((entry) => (
             <li key={uuidv4()} className="flex items-center gap-2">
               <div className="h-3 w-3" style={{ background: entry.color }} />
               <span className="text-sm select-none">{entry.name}</span>

@@ -14,15 +14,9 @@ const SocialShare = ({ username }) => {
   const copyToClipBoard = (copyMe) => {
     //Chrome
     if (navigator.clipboard != undefined) {
-      navigator.clipboard.writeText(copyMe).then(
-        () => {
-          setCopySuccess('Copied!');
-          console.log('Copying to clipboard was successful!');
-        },
-        (err) => {
-          console.error('Could not copy text: ', err);
-        }
-      );
+      navigator.clipboard.writeText(copyMe).then(() => {
+        setCopySuccess('Copied!');
+      });
     }
 
     // Internet Explorer
