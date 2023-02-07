@@ -1,18 +1,21 @@
 import React, { useReducer } from 'react';
+import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 import { RecoilRoot } from 'recoil';
+import { ApolloProvider } from '@apollo/client';
+
 import '../styles/tailwind.scss';
-import ThemeButton from '../components/themeButton/ThemeButton';
 
 // SEO
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
 
-// apollo
-import { ApolloProvider } from '@apollo/client';
 import { client } from '../client';
+import { GA_TRACKING_ID } from '../lib/gtag';
 
 import Footer from '../components/footer/Footer';
+import ThemeButton from '../components/themeButton/ThemeButton';
+
 export const AppContext = React.createContext();
 
 const reducer = (state, action) => {
@@ -34,18 +37,40 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <ApolloProvider client={client}>
-      <RecoilRoot>
-        <DefaultSeo {...SEO} />
-        <ThemeProvider attribute="class">
-          <AppContext.Provider value={{ ...state, toggleLoading }}>
-            <Component {...pageProps} />
-            <ThemeButton />
-            <Footer />
-          </AppContext.Provider>
-        </ThemeProvider>
-      </RecoilRoot>
-    </ApolloProvider>
+    <>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        defer
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      <ApolloProvider client={client}>
+        <RecoilRoot>
+          <DefaultSeo {...SEO} />
+          <ThemeProvider attribute="class">
+            <AppContext.Provider value={{ ...state, toggleLoading }}>
+              <Component {...pageProps} />
+              <ThemeButton />
+              <Footer />
+            </AppContext.Provider>
+          </ThemeProvider>
+        </RecoilRoot>
+      </ApolloProvider>
+    </>
   );
 }
 
