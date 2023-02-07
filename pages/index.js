@@ -1,6 +1,8 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Search from '../components/reuse/Search';
+
+const Search = dynamic(() => import('../components/reuse/Search'));
 
 const Home = () => {
   return (

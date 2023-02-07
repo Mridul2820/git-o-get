@@ -7,7 +7,6 @@ import { GET_USER } from '../../graphql/Query';
 import { client } from '../../client';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
-import NotFound from '../../components/404/NotFound';
 import { AppContext } from '../_app';
 
 const Navbar = dynamic(() => import('../../components/nav/Navbar'));
@@ -32,6 +31,8 @@ const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
 const ContributionGraph = dynamic(() =>
   import('../../components/graphs/ContributionGraph')
 );
+const NotFound = dynamic(() => import('../../components/404/NotFound'));
+
 const { SITE_URL } = process.env;
 
 const UserName = ({ user, ogImageUrl }) => {
