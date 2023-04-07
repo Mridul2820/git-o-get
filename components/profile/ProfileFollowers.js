@@ -1,15 +1,15 @@
-import React from 'react';
-import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
+import React from "react";
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 
 const ProfileFollowers = ({ username, followers }) => {
   return (
     <div className="dark:bg-dark-color dark:text-white border dark:border-gray-700 p-3 shadow-bs1 rounded-md h-full w-full bg-white">
       <p className="text-center mb-5 text-xl font-semibold">
-        {'@'}
-        {username} Follwers {'(Total: '}
+        {"@"}
+        {username} Follwers {"(Total: "}
         {followers.totalCount}
-        {')'}
+        {")"}
       </p>
       <div className="flex flex-col gap-4 max-h-[450px] overflow-y-scroll pt-2 pr-5">
         {followers?.nodes.map((follow) => (
@@ -27,7 +27,7 @@ const ProfileFollowers = ({ username, followers }) => {
             />
             <div className="">
               <p className="text-base font-semibold">
-                {'@'}
+                {"@"}
                 {follow.login}
               </p>
               <p className="font-normal text-slate-600 text-sm dark:text-slate-400">

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import GitHubCalendar from 'react-github-calendar';
-import ReactTooltip from 'react-tooltip';
-import styled from 'styled-components';
-import { useTheme } from 'next-themes';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import GitHubCalendar from "react-github-calendar";
+import ReactTooltip from "react-tooltip";
+import styled from "styled-components";
+import { useTheme } from "next-themes";
 
 const useColorTheme = () => {
   const { theme, systemTheme } = useTheme();
@@ -15,23 +15,23 @@ const useColorTheme = () => {
 
   if (!mounted) return null;
 
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  if (currentTheme === 'dark') {
+  if (currentTheme === "dark") {
     return {
-      level4: '#39d353',
-      level3: '#26a641',
-      level2: '#006d32',
-      level1: '#0e4429',
-      level0: '#161b22',
+      level4: "#39d353",
+      level3: "#26a641",
+      level2: "#006d32",
+      level1: "#0e4429",
+      level0: "#161b22",
     };
   } else {
     return {
-      level4: '#216e39',
-      level3: '#30a14e',
-      level2: '#40c463',
-      level1: '#9be9a8',
-      level0: '#ebedf0',
+      level4: "#216e39",
+      level3: "#30a14e",
+      level2: "#40c463",
+      level1: "#9be9a8",
+      level0: "#ebedf0",
     };
   }
 };
@@ -45,7 +45,7 @@ const ProfileCalendar = ({ username }) => {
       animate={{ scale: 1 }}
     >
       <p className="font-bold">
-        <a href={`https://github.com/${username}`}>{'@' + username}</a> on
+        <a href={`https://github.com/${username}`}>{"@" + username}</a> on
         GitHub
       </p>
       <GitHubCalendar username={username} fontSize={18} theme={useColorTheme()}>

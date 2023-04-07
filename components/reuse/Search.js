@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { FaSearch, FaSpinner } from 'react-icons/fa';
-import { useRouter } from 'next/router';
-import { AppContext } from '../../pages/_app';
+import React, { useContext, useState } from "react";
+import { FaSearch, FaSpinner } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { AppContext } from "../../pages/_app";
 
 const Search = ({ height }) => {
   const { isLoading, toggleLoading } = useContext(AppContext);
@@ -13,7 +13,7 @@ const Search = ({ height }) => {
     if (loading) return; // Prevent multiple requests
 
     const fields = Array.from(event.currentTarget.elements);
-    const username = fields.find((field) => field.name === 'username')?.value;
+    const username = fields.find((field) => field.name === "username")?.value;
 
     if (username && !hasWhiteSpaceText(username)) {
       setLoading(true);

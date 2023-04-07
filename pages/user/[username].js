@@ -1,37 +1,37 @@
-import React, { useContext, useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
-import { v2 as cloudinary } from 'cloudinary';
+import React, { useContext, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { v2 as cloudinary } from "cloudinary";
 
 // GQL
-import { GET_USER } from '../../graphql/Query';
-import { client } from '../../client';
-import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
-import { AppContext } from '../_app';
+import { GET_USER } from "../../graphql/Query";
+import { client } from "../../client";
+import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
+import { AppContext } from "../_app";
 
-const Navbar = dynamic(() => import('../../components/nav/Navbar'));
-const SocialCard = dynamic(() => import('../../components/social/SocialCard'));
+const Navbar = dynamic(() => import("../../components/nav/Navbar"));
+const SocialCard = dynamic(() => import("../../components/social/SocialCard"));
 const ProfileInfo = dynamic(() =>
-  import('../../components/profile/ProfileInfo')
+  import("../../components/profile/ProfileInfo")
 );
 const ProfileNums = dynamic(() =>
-  import('../../components/profile/ProfileNums')
+  import("../../components/profile/ProfileNums")
 );
 const ProfileFollowers = dynamic(() =>
-  import('../../components/profile/ProfileFollowers')
+  import("../../components/profile/ProfileFollowers")
 );
 const ProfileCalendar = dynamic(() =>
-  import('../../components/profile/ProfileCalendar')
+  import("../../components/profile/ProfileCalendar")
 );
 const LanguagePie = dynamic(() =>
-  import('../../components/graphs/LanguagePie')
+  import("../../components/graphs/LanguagePie")
 );
-const MostForked = dynamic(() => import('../../components/graphs/MostForked'));
-const MostStar = dynamic(() => import('../../components/graphs/MostStar'));
+const MostForked = dynamic(() => import("../../components/graphs/MostForked"));
+const MostStar = dynamic(() => import("../../components/graphs/MostStar"));
 const ContributionGraph = dynamic(() =>
-  import('../../components/graphs/ContributionGraph')
+  import("../../components/graphs/ContributionGraph")
 );
-const NotFound = dynamic(() => import('../../components/404/NotFound'));
+const NotFound = dynamic(() => import("../../components/404/NotFound"));
 
 const { SITE_URL } = process.env;
 
@@ -53,14 +53,14 @@ const UserName = ({ user, ogImageUrl }) => {
   }, [user]);
 
   const SEO = {
-    title: `${user?.name ? user.name : 'User'} (@${
+    title: `${user?.name ? user.name : "User"} (@${
       user?.login
     }) : Github Profile Stats and Graphs in One Place`,
     description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
     canonical: `${SITE_URL}/user/${user?.login}`,
 
     openGraph: {
-      title: `${user?.name ? user.name : 'User'} (@${
+      title: `${user?.name ? user.name : "User"} (@${
         user?.login
       }) : Github Profile Stats and Graphs in One Place`,
       description: `${user?.name} (@${user?.login}) Github Profile Stats, Languge Graph, Social Card, Contribution Graph, Repository Stats, Graphs and more`,
@@ -151,8 +151,8 @@ export async function getServerSideProps({ params }) {
       height: 506,
       transformation: [
         {
-          fetch_format: 'auto',
-          quality: 'auto',
+          fetch_format: "auto",
+          quality: "auto",
         },
         {
           overlay: {
@@ -160,95 +160,95 @@ export async function getServerSideProps({ params }) {
           },
         },
         {
-          flags: 'layer_apply',
+          flags: "layer_apply",
           width: 290,
           height: 290,
-          gravity: 'north_west',
+          gravity: "north_west",
           x: 50,
           y: 37,
           radius: 290,
         },
         {
-          color: '#8e51ff',
-          crop: 'fit',
+          color: "#8e51ff",
+          crop: "fit",
           width: 500,
           overlay: {
-            font_family: 'Source Sans Pro',
+            font_family: "Source Sans Pro",
             font_size: 50,
-            font_weight: 'bold',
-            text: `@${user.login ? user.login : ' '}`,
+            font_weight: "bold",
+            text: `@${user.login ? user.login : " "}`,
           },
         },
         {
-          color: '#627597',
-          crop: 'fit',
+          color: "#627597",
+          crop: "fit",
           width: 500,
           overlay: {
-            font_family: 'Source Sans Pro',
+            font_family: "Source Sans Pro",
             font_size: 30,
-            font_weight: 'semibold',
-            text: user.name ? user.name : ' ',
+            font_weight: "semibold",
+            text: user.name ? user.name : " ",
           },
         },
         {
-          flags: 'layer_apply',
-          gravity: 'north_west',
-          y: 'h + 18',
+          flags: "layer_apply",
+          gravity: "north_west",
+          y: "h + 18",
         },
         {
-          color: '#24292F',
-          crop: 'fit',
+          color: "#24292F",
+          crop: "fit",
           width: 500,
           overlay: {
-            font_family: 'Source Sans Pro',
+            font_family: "Source Sans Pro",
             font_size: 28,
-            font_weight: 'semibold',
+            font_weight: "semibold",
             text: `${user.followers.totalCount} Followers  ·  ${user.following.totalCount} Following`,
-            crop: 'fit',
+            crop: "fit",
           },
         },
         {
-          flags: 'layer_apply',
-          gravity: 'north_west',
-          y: 'h + 15',
+          flags: "layer_apply",
+          gravity: "north_west",
+          y: "h + 15",
         },
         {
-          color: '#24292F',
-          crop: 'fit',
+          color: "#24292F",
+          crop: "fit",
           width: 500,
           overlay: {
-            font_family: 'Source Sans Pro',
+            font_family: "Source Sans Pro",
             font_size: 28,
-            font_weight: 'semibold',
+            font_weight: "semibold",
             text: `${user.repositories.totalCount} Public repos  ·  ${user.gists.totalCount} Public Gists`,
-            crop: 'fit',
+            crop: "fit",
           },
         },
         {
-          flags: 'layer_apply',
-          gravity: 'north_west',
-          y: 'h + 15',
+          flags: "layer_apply",
+          gravity: "north_west",
+          y: "h + 15",
         },
         {
-          color: '#24292F',
-          crop: 'fit',
+          color: "#24292F",
+          crop: "fit",
           width: 500,
           overlay: {
-            font_family: 'Source Sans Pro',
+            font_family: "Source Sans Pro",
             font_size: 28,
-            font_weight: 'semibold',
+            font_weight: "semibold",
             text: `${user.pullRequests.totalCount} Pull requests  ·  ${user.issues.totalCount} Issues`,
-            crop: 'fit',
+            crop: "fit",
           },
         },
         {
-          flags: 'layer_apply',
-          gravity: 'north_west',
-          y: 'h + 15',
+          flags: "layer_apply",
+          gravity: "north_west",
+          y: "h + 15",
         },
         {
-          flags: 'layer_apply',
-          gravity: 'north_west',
+          flags: "layer_apply",
+          gravity: "north_west",
           x: 400,
           y: 50,
         },

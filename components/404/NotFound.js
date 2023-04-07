@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
-import { BiArrowBack } from 'react-icons/bi';
+import Link from "next/link";
+import React from "react";
+import { BiArrowBack } from "react-icons/bi";
 
 const NotFound = ({ image, message }) => {
   return (
