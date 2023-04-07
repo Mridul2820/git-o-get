@@ -1,8 +1,8 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import React from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 
-const Search = dynamic(() => import('../components/reuse/Search'));
+const Search = dynamic(() => import("../components/reuse/Search"));
 
 const Home = () => {
   return (
@@ -45,7 +45,7 @@ const Home = () => {
             <li className="feature-point">Profile Stats</li>
             <li className="feature-point">Profile Contribution Calander</li>
             <li className="feature-point">
-              List of Followers{'('}last 100{')'}
+              List of Followers{"("}last 100{")"}
             </li>
             <li className="feature-point">Most forked Repository Graph</li>
             <li className="feature-point">Most Stared Repository Graph</li>

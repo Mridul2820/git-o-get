@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   LineChart,
   Line,
@@ -7,8 +7,8 @@ import {
   XAxis,
   ResponsiveContainer,
   CartesianGrid,
-} from 'recharts';
-import CustomTooltip from '../reuse/CustomTooltip';
+} from "recharts";
+import CustomTooltip from "../reuse/CustomTooltip";
 
 const ContributionGraph = ({ weeks, username }) => {
   let contributions = [];
@@ -41,13 +41,13 @@ const ContributionGraph = ({ weeks, username }) => {
         Contributions
       </p>
       <p className="absolute left-[50%] bottom-3 translate-x-[-50%] whitespace-nowrap">
-        Days{' '}
+        Days{" "}
         <span className="font-semibold">
-          {'(' +
+          {"(" +
             contributions[0].date +
-            ' - ' +
+            " - " +
             contributions.slice(-1)[0].date +
-            ')'}
+            ")"}
         </span>
       </p>
       <div className="pb-8 pl-0 md:pl-4">

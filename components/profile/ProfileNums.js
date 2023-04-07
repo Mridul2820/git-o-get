@@ -1,11 +1,11 @@
-import React from 'react';
-import { GoRepo, GoGist } from 'react-icons/go';
-import { FiUsers, FiUserPlus } from 'react-icons/fi';
-import { AiOutlinePullRequest } from 'react-icons/ai';
-import { VscIssues } from 'react-icons/vsc';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { v4 as uuidv4 } from 'uuid';
+import React from "react";
+import { GoRepo, GoGist } from "react-icons/go";
+import { FiUsers, FiUserPlus } from "react-icons/fi";
+import { AiOutlinePullRequest } from "react-icons/ai";
+import { VscIssues } from "react-icons/vsc";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 
 const ProfileNums = ({
   followers,
@@ -19,50 +19,50 @@ const ProfileNums = ({
     {
       id: 1,
       icon: <FiUsers size={24} />,
-      label: 'Followers',
-      title: 'Total Followers',
+      label: "Followers",
+      title: "Total Followers",
       value: followers,
-      color: 'green',
+      color: "green",
     },
     {
       id: 2,
       icon: <FiUserPlus size={24} />,
-      label: 'Following',
-      title: 'Total Following',
+      label: "Following",
+      title: "Total Following",
       value: following,
-      color: 'purple',
+      color: "purple",
     },
     {
       id: 3,
       icon: <AiOutlinePullRequest size={24} />,
-      label: 'PRs',
-      title: 'Total Pull Requests',
+      label: "PRs",
+      title: "Total Pull Requests",
       value: pullRequests,
-      color: 'blue',
+      color: "blue",
     },
     {
       id: 4,
       icon: <VscIssues size={24} />,
-      label: 'Issues',
-      title: 'Total Issues',
+      label: "Issues",
+      title: "Total Issues",
       value: issues,
-      color: 'red',
+      color: "red",
     },
     {
       id: 5,
       icon: <GoRepo size={24} />,
-      label: 'Repos',
-      title: 'Total Repos',
+      label: "Repos",
+      title: "Total Repos",
       value: total_repos,
-      color: 'pink',
+      color: "pink",
     },
     {
       id: 6,
       icon: <GoGist size={24} />,
-      label: 'Gists',
-      title: 'Total Gists',
+      label: "Gists",
+      title: "Total Gists",
       value: total_gists,
-      color: 'yellow',
+      color: "yellow",
     },
   ];
 

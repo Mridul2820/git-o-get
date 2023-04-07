@@ -1,5 +1,5 @@
-const path = require('path');
-require('dotenv').config();
+const path = require("path");
+require("dotenv").config();
 
 module.exports = {
   env: {
@@ -11,13 +11,13 @@ module.exports = {
   },
   publicRuntimeConfig: {},
   images: {
-    formats: ['image/avif', 'image/webp'],
-    domains: ['localhost', 'avatars.githubusercontent.com'],
+    formats: ["image/avif", "image/webp"],
+    domains: ["localhost", "avatars.githubusercontent.com"],
   },
 
   webpack: (config) => {
-    config.resolve.alias['components'] = path.join(__dirname, 'components');
-    config.resolve.alias['public'] = path.join(__dirname, 'public');
+    config.resolve.alias["components"] = path.join(__dirname, "components");
+    config.resolve.alias["public"] = path.join(__dirname, "public");
 
     return config;
   },

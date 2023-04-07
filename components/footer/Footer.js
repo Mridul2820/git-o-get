@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
@@ -16,14 +16,14 @@ const Footer = () => {
         .
       </span>
       <span>
-        Made with ❤ {'& '}
+        Made with ❤ {"& "}
         <a
           className="ml-1 font-semibold"
           href="https://github.com/Mridul2820/git-o-get"
           target="_blank"
           rel="noreferrer"
         >
-          {'<Code/>'}
+          {"<Code/>"}
         </a>
       </span>
     </footer>

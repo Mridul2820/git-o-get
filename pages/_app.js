@@ -1,25 +1,25 @@
-import React, { useReducer } from 'react';
-import Script from 'next/script';
-import { ThemeProvider } from 'next-themes';
-import { RecoilRoot } from 'recoil';
-import { ApolloProvider } from '@apollo/client';
+import React, { useReducer } from "react";
+import Script from "next/script";
+import { ThemeProvider } from "next-themes";
+import { RecoilRoot } from "recoil";
+import { ApolloProvider } from "@apollo/client";
 
-import '../styles/tailwind.scss';
+import "../styles/tailwind.scss";
 
 // SEO
-import { DefaultSeo } from 'next-seo';
-import SEO from '../next-seo.config';
+import { DefaultSeo } from "next-seo";
+import SEO from "../next-seo.config";
 
-import { client } from '../client';
-import { GA_TRACKING_ID } from '../lib/gtag';
+import { client } from "../client";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
-import Footer from '../components/footer/Footer';
-import ThemeButton from '../components/themeButton/ThemeButton';
+import Footer from "../components/footer/Footer";
+import ThemeButton from "../components/themeButton/ThemeButton";
 
 export const AppContext = React.createContext();
 
 const reducer = (state, action) => {
-  if (action.type === 'LOADING_TOGGLE') {
+  if (action.type === "LOADING_TOGGLE") {
     return { ...state, isLoading: action.payload };
   }
   return state;
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
 
   const toggleLoading = async (flag) => {
     dispatch({
-      type: 'LOADING_TOGGLE',
+      type: "LOADING_TOGGLE",
       payload: flag,
     });
   };

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { sumBy } from 'lodash';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { sumBy } from "lodash";
+import { v4 as uuidv4 } from "uuid";
 import {
   PieChart,
   Pie,
@@ -9,7 +9,7 @@ import {
   Cell,
   ResponsiveContainer,
   Tooltip,
-} from 'recharts';
+} from "recharts";
 
 const LanguagePie = ({ repositories }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,18 +45,18 @@ const LanguagePie = ({ repositories }) => {
   if (allLangs.length >= 5) {
     const mainLangs = allLangs.slice(0, 4);
 
-    const sum_of_other = sumBy(allLangs.slice(4), 'size');
+    const sum_of_other = sumBy(allLangs.slice(4), "size");
 
     formatLangs.push(...mainLangs, {
-      name: 'Others',
-      color: '#bbb',
+      name: "Others",
+      color: "#bbb",
       size: sum_of_other,
     });
   } else {
     formatLangs.push(...allLangs);
   }
 
-  const sum_of_all_values = sumBy(formatLangs, 'size');
+  const sum_of_all_values = sumBy(formatLangs, "size");
 
   const renderActiveShape = ({
     cx,
@@ -96,9 +96,9 @@ const LanguagePie = ({ repositories }) => {
       return (
         <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2 dark:bg-dark-gray dark:text-white border dark:border-gray-500">
           {payload[0].name +
-            ': ' +
+            ": " +
             ((payload[0].value * 100) / sum_of_all_values).toFixed(2) +
-            '%'}
+            "%"}
         </div>
       );
     }
@@ -114,7 +114,7 @@ const LanguagePie = ({ repositories }) => {
               <div className="h-3 w-3" style={{ background: entry.color }} />
               <span className="text-sm select-none">{entry.name}</span>
               <span>
-                {((entry.size * 100) / sum_of_all_values).toFixed(2) + '%'}
+                {((entry.size * 100) / sum_of_all_values).toFixed(2) + "%"}
               </span>
             </li>
           ))}

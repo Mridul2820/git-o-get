@@ -1,5 +1,5 @@
-import React from 'react';
-import { truncate } from 'lodash';
+import React from "react";
+import { truncate } from "lodash";
 import {
   BarChart,
   Bar,
@@ -8,8 +8,8 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from 'recharts';
-import CustomTooltip from '../reuse/CustomTooltip';
+} from "recharts";
+import CustomTooltip from "../reuse/CustomTooltip";
 
 const MostForked = ({ repos }) => {
   const sortByFork = repos
@@ -18,7 +18,7 @@ const MostForked = ({ repos }) => {
     .slice(0, 4);
 
   const tickFork = (value) => {
-    let roundVal = value > 1000 ? (value / 1000).toFixed(1) + 'k' : value;
+    let roundVal = value > 1000 ? (value / 1000).toFixed(1) + "k" : value;
 
     return roundVal;
   };

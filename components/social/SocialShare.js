@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { FaTwitter, FaLinkedin } from 'react-icons/fa';
-import { BiLinkAlt } from 'react-icons/bi';
-import { useState } from 'react';
+import styled from "styled-components";
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { BiLinkAlt } from "react-icons/bi";
+import { useState } from "react";
 
 const SocialShare = ({ username }) => {
-  const [copySuccess, setCopySuccess] = useState('Copy to Clipboard');
+  const [copySuccess, setCopySuccess] = useState("Copy to Clipboard");
 
   const { SITE_URL } = process.env;
   const shareText = `Check out ${username}'s GitHub profile!`;
@@ -15,13 +15,13 @@ const SocialShare = ({ username }) => {
     //Chrome
     if (navigator.clipboard != undefined) {
       navigator.clipboard.writeText(copyMe).then(() => {
-        setCopySuccess('Copied!');
+        setCopySuccess("Copied!");
       });
     }
 
     // Internet Explorer
     else if (window.clipboardData) {
-      window.clipboardData.setData('Text', copyMe);
+      window.clipboardData.setData("Text", copyMe);
     }
   };
 
@@ -53,7 +53,7 @@ const SocialShare = ({ username }) => {
 
         <CopyLink
           onClick={() => copyToClipBoard(`${shareUrl}`)}
-          onMouseEnter={() => setCopySuccess('Copy to Clipboard')}
+          onMouseEnter={() => setCopySuccess("Copy to Clipboard")}
           className="copy share-item"
         >
           <BiLinkAlt size="20px" />

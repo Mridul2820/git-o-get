@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { BiBuildings } from 'react-icons/bi';
-import { IoLocationOutline } from 'react-icons/io5';
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { BsLink45Deg } from 'react-icons/bs';
-import { HiOutlineMail } from 'react-icons/hi';
+import React from "react";
+import { motion } from "framer-motion";
+import { BiBuildings } from "react-icons/bi";
+import { IoLocationOutline } from "react-icons/io5";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { BsLink45Deg } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
 
 const ProfileInfo = ({ user }) => {
   return (
@@ -23,7 +23,7 @@ const ProfileInfo = ({ user }) => {
         <div className="">
           <h1 className="text-xl md:text-2xl font-bold">
             <a href={user.url} target="_blank" rel="noreferrer">
-              {'@'}
+              {"@"}
               {user.login}
             </a>
           </h1>
@@ -66,7 +66,7 @@ const ProfileInfo = ({ user }) => {
               rel="noreferrer"
               className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
-              {'@'}
+              {"@"}
               {user.twitterUsername}
             </a>
           </div>

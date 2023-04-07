@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Search from '../reuse/Search';
-import { BsGithub } from 'react-icons/bs';
+import React from "react";
+import Link from "next/link";
+import Search from "../reuse/Search";
+import { BsGithub } from "react-icons/bs";
 
 const Navbar = () => {
   return (

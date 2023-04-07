@@ -1,17 +1,17 @@
-import React from 'react';
-import axios from 'axios';
-import fileDownload from 'js-file-download';
-import { BsFillCloudDownloadFill } from 'react-icons/bs';
-import styled from 'styled-components';
-import SocialShare from './SocialShare';
-import PuffLoader from '../loader/PuffLoader';
-import { motion } from 'framer-motion';
+import React from "react";
+import axios from "axios";
+import fileDownload from "js-file-download";
+import { BsFillCloudDownloadFill } from "react-icons/bs";
+import styled from "styled-components";
+import SocialShare from "./SocialShare";
+import PuffLoader from "../loader/PuffLoader";
+import { motion } from "framer-motion";
 
 const SocialCard = ({ ogImageUrl, username, loading }) => {
   const handleDownload = (url, filename) => {
     axios
       .get(url, {
-        responseType: 'blob',
+        responseType: "blob",
       })
       .then((res) => {
         fileDownload(res.data, filename);
@@ -41,7 +41,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
               />
               <button
                 className="download bg-purple-500 text-white p-5 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full cursor-pointer"
-                onClick={() => handleDownload(ogImageUrl, username + '.jpg')}
+                onClick={() => handleDownload(ogImageUrl, username + ".jpg")}
               >
                 <BsFillCloudDownloadFill size={44} />
               </button>
