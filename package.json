@@ -30,6 +30,7 @@
     "react-github-calendar": "^4.0.0",
     "react-icons": "^4.8.0",
     "react-is": "^18.2.0",
+    "react-share": "^4.4.1",
     "react-tooltip": "^5.11.1",
     "recharts": "^2.5.0",
     "recoil": "^0.7.7",
