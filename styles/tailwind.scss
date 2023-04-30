@@ -4,6 +4,7 @@
 
 /* Custom Components */
 @import "./scss/item";
+@import "./scss/button";
 
 body {
   background: #f1f5f8;
@@ -25,4 +26,11 @@ body {
 
 *::-webkit-scrollbar-thumb {
   background-color: #9a65fd;
+}
+
+g,
+path {
+  &:focus {
+    outline: none !important;
+  }
 }

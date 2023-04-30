@@ -5,3 +5,7 @@
 .share-item {
   @apply dark:bg-dark-color dark:text-white border dark:border-gray-700 flex justify-center items-center text-white shadow-bs5 hover:shadow-bs2 transition-all duration-200 p-2 rounded-full;
 }
+
+.card-item {
+  @apply shadow-bs1 rounded-md h-full w-full bg-white dark:bg-dark-color dark:text-white border dark:border-gray-700;
+}

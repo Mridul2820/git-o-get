@@ -11,7 +11,7 @@ const Home = () => {
         Git O Get - Github Profile Stats and Graphs in One Place
       </h1>
       <div className="flex gap-5 flex-col md:flex-row justify-center items-center max-w-[1200px] w-full mx-auto pb-5 pt-0 md:pt-5">
-        <div className="w-full md:w-[50%]">
+        <div className="w-full md:w-1/2">
           <Image
             height={400}
             width={500}
@@ -22,7 +22,7 @@ const Home = () => {
             className="w-full max-w-[500px] mx-auto"
           />
         </div>
-        <div className="flex flex-col items-center justify-center dark:bg-dark-color dark:text-white dark:border-gray-500 gap-4 p-5 shadow-bs3 hover:shadow-bs2 border-2 border-slate-400 rounded-md w-full md:w-[50%] h-full bg-white">
+        <div className="flex flex-col items-center justify-center dark:bg-dark-color dark:text-white dark:border-gray-500 gap-4 p-5 shadow-bs3 hover:shadow-bs2 border-2 border-slate-400 rounded-md w-full md:w-1/2 h-full bg-white">
           <div className="p-3 w-16 h-16 rounded-full shadow-bs2 border-2 border-slate-400">
             <img
               src="/logo.png"
