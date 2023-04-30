@@ -22,8 +22,8 @@ const ProfileNums = dynamic(() =>
 const ProfileFollowers = dynamic(() =>
   import("../../components/profile/ProfileFollowers")
 );
-const ProfilePinnedRepositories = dynamic(() =>
-  import('../../components/profile/ProfilePinnedRepositories')
+const PinnedRepositories = dynamic(() =>
+  import("../../components/profile/PinnedRepositories")
 );
 const ProfileCalendar = dynamic(() =>
   import("../../components/profile/ProfileCalendar")
@@ -91,42 +91,45 @@ const UserName = ({ user, ogImageUrl }) => {
           <div className="w-full flex gap-5 flex-col">
             <ProfileInfo user={user} />
             <ProfileNums
-              followers={user.followers.totalCount}
-              following={user.following.totalCount}
-              total_repos={user.repositories.totalCount}
-              total_gists={user.gists.totalCount}
-              pullRequests={user.pullRequests.totalCount}
-              issues={user.issues.totalCount}
+              followers={user?.followers?.totalCount}
+              following={user?.following?.totalCount}
+              total_repos={user?.repositories?.totalCount}
+              total_gists={user?.gists?.totalCount}
+              pullRequests={user?.pullRequests?.totalCount}
+              issues={user?.issues?.totalCount}
             />
           </div>
           <div className="h-full w-full flex flex-col gap-5 col-span-1 lg:col-span-2">
             <div className="flex flex-col lg:flex-row gap-5">
-              <LanguagePie repositories={user.repositories.nodes} />
+              <LanguagePie repositories={user?.repositories?.nodes} />
               <SocialCard
-                username={user.login}
+                username={user?.login}
                 ogImageUrl={ogImageUrl}
                 loading={loading}
               />
             </div>
-            <ProfileCalendar username={user.login} />
+            <ProfileCalendar username={user?.login} />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
-          <ProfileFollowers followers={user.followers} username={user.login} />
-          <MostForked repos={user.repositories?.nodes} />
-          <MostStar repos={user.repositories?.nodes} />
+          <ProfileFollowers
+            followers={user?.followers}
+            username={user?.login}
+          />
+          <MostForked repos={user?.repositories?.nodes} />
+          <MostStar repos={user?.repositories?.nodes} />
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
-          <div className="h-full w-full md:grid-cols-1">
-            <ProfilePinnedRepositories username={user.login} pinnedRepositories={user.pinnedItems} />
-          </div>
-          <div className="h-full w-full md:col-span-2">
-            <ContributionGraph
-              weeks={user.contributionsCollection.contributionCalendar.weeks}
-              username={user.login}
-            />
-          </div>
+        <div className="h-full w-full mt-5">
+          <PinnedRepositories
+            username={user?.login}
+            pinnedRepositories={user?.pinnedItems}
+          />
+        </div>
+        <div className="h-full w-full mt-5">
+          <ContributionGraph
+            weeks={user?.contributionsCollection?.contributionCalendar?.weeks}
+            username={user?.login}
+          />
         </div>
       </main>
     </>
