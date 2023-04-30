@@ -17,19 +17,19 @@ const ThemeButton = () => {
   if (currentTheme === "dark") {
     return (
       <button
-        className="flex items-center justify-center fixed w-12 h-12 bottom-4 right-3  bg-gray-800 rounded-md border border-gray-700  hover:border-gray-600 hover:bg-dark-color p-3 md:bottom-7 md:right-6"
+        className="theme-button bg-gray-100 hover:bg-gray-200 text-black"
         onClick={() => setTheme("light")}
       >
-        {MdOutlineLightMode()}
+        <MdOutlineLightMode size={24} />
       </button>
     );
   } else {
     return (
       <button
-        className="flex items-center justify-center fixed w-12 h-12 bottom-4 right-3  bg-dark-gray text-white rounded-md border border-gray-700  hover:bg-gray-700 p-3 md:bottom-7 md:right-6"
+        className="theme-button bg-gray-900 hover:bg-gray-800 text-white"
         onClick={() => setTheme("dark")}
       >
-        {BsFillMoonStarsFill()}
+        <BsFillMoonStarsFill size={20} />
       </button>
     );
   }
