@@ -9,7 +9,7 @@ import { HiOutlineMail } from "react-icons/hi";
 const ProfileInfo = ({ user }) => {
   return (
     <motion.div
-      className="card-item py-4 px-5 flex flex-col justify-center bg-white"
+      className="card-item py-4 px-5 flex flex-col justify-center"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

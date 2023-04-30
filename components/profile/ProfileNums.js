@@ -68,7 +68,7 @@ const ProfileNums = ({
 
   return (
     <motion.div
-      className="card-item w-full bg-white p-5 dark:border-gray-700"
+      className="card-item w-full p-5 dark:border-gray-700"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

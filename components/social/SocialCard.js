@@ -20,7 +20,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
 
   return (
     <motion.div
-      className="card-item flex flex-col justify-between gap-4 py-3 px-3 md:px-5 md:min-h-[442px] bg-white"
+      className="card-item flex flex-col justify-between gap-4 py-3 px-3 md:px-5 md:min-h-[442px]"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

@@ -30,7 +30,7 @@ const MostStar = ({ repos }) => {
   };
 
   return (
-    <div className="card-item p-3 min-h-[400px] bg-white">
+    <div className="card-item p-3 min-h-[400px]">
       <p className="text-center mb-5 text-xl font-semibold">
         Most Stared Repositories
       </p>
