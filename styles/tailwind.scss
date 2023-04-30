@@ -27,3 +27,10 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #9a65fd;
 }
+
+g,
+path {
+  &:focus {
+    outline: none !important;
+  }
+}
