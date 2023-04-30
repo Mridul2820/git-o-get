@@ -30,7 +30,7 @@ const MostForked = ({ repos }) => {
   };
 
   return (
-    <div className="dark:bg-dark-color dark:text-white border dark:border-gray-700 p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full bg-white">
+    <div className="card-item p-3 min-h-[400px] bg-white">
       <p className="text-center mb-5 text-xl font-semibold">
         Most Forked Repositories
       </p>

@@ -125,7 +125,7 @@ const LanguagePie = ({ repositories }) => {
 
   return (
     <motion.div
-      className="dark:bg-dark-color dark:text-white border dark:border-gray-700 p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[442px] max-w-[380px] bg-white"
+      className="card-item dark:border-gray-700 p-3 pb-0 min-h-[442px] max-w-[380px] bg-white"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

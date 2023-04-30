@@ -123,6 +123,8 @@ const UserName = ({ user, ogImageUrl }) => {
   );
 };
 
+export default UserName;
+
 export async function getServerSideProps({ params }) {
   const { CLOUD_NAME } = process.env;
   const { BASE_IMAGE_URL } = process.env;
@@ -263,5 +265,3 @@ export async function getServerSideProps({ params }) {
     },
   };
 }
-
-export default UserName;
