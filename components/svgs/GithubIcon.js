@@ -8,7 +8,7 @@ const GithubIcon = () => {
       viewBox="0 0 16 16"
       version="1.1"
       data-view-component="true"
-      className="w-4 h-4 fill-black dark:fill-white"
+      className="w-4 h-4 fill-slate-900 dark:fill-slate-100"
     >
       <path
         fillRule="evenodd"

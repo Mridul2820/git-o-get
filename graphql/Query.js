@@ -63,27 +63,27 @@ export const GET_USER = gql`
       ) {
         totalCount
       }
-      pinnedItems(types:REPOSITORY, first: 100) {
+      pinnedItems(types: REPOSITORY, first: 100) {
         nodes {
           ... on Repository {
-            id
-            name
+            isPrivate
+            isFork
+            isTemplate
+            isArchived
             url
-            stargazerCount
-            shortDescriptionHTML
-            watchers {
-              totalCount
-            }
             forks {
               totalCount
             }
-            languages(first: 1, orderBy: {direction: DESC, field: SIZE}) {
+            stargazers {
+              totalCount
+            }
+            name
+            description
+            languages(orderBy: { field: SIZE, direction: DESC }, first: 1) {
               nodes {
-                ... on Language {
-                  id
-                  name
-                  color
-                }
+                color
+                id
+                name
               }
             }
           }

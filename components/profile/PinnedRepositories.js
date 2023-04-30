@@ -12,7 +12,7 @@ const PinnedRepositories = ({ username, pinnedRepositories }) => {
           {"@"} {username} Pinned Repositories
         </div>
       </p>
-      <div className="flex flex-col gap-4 max-h-[450px] overflow-y-scroll pt-2 pr-5">
+      <div className="flex flex-wrap justify-center gap-4 max-h-[450px] overflow-y-scroll pt-2 pr-5">
         {pinnedRepositories?.nodes.map((repo) => (
           <RepositoryCard repository={repo} theme={theme} />
         ))}

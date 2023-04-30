@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const RepoIcon = () => {
   return (
@@ -10,7 +10,7 @@ const RepoIcon = () => {
       viewBox="0 0 16 16"
       version="1.1"
       data-view-component="true"
-      className="w-4 h-4 fill-muted-default dark:fill-muted-dark"
+      className="w-4 h-4 fill-slate-900 dark:fill-slate-100"
     >
       <path
         fillRule="evenodd"
