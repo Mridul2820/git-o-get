@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 import { v2 as cloudinary } from "cloudinary";
 
 // GQL
 import { GET_USER } from "../../graphql/Query";
 import { client } from "../../client";
-import { NextSeo } from "next-seo";
-import { useRouter } from "next/router";
+
 import { AppContext } from "../_app";
+import { SITE_URL } from "../../constant";
 
 const Navbar = dynamic(() => import("../../components/nav/Navbar"));
 const SocialCard = dynamic(() => import("../../components/social/SocialCard"));
@@ -32,8 +34,6 @@ const ContributionGraph = dynamic(() =>
   import("../../components/graphs/ContributionGraph")
 );
 const NotFound = dynamic(() => import("../../components/404/NotFound"));
-
-const { SITE_URL } = process.env;
 
 const UserName = ({ user, ogImageUrl }) => {
   const { toggleLoading } = useContext(AppContext);

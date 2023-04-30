@@ -1,12 +1,13 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { BiLinkAlt } from "react-icons/bi";
-import { useState } from "react";
+
+import { SITE_URL } from "../../constant";
 
 const SocialShare = ({ username }) => {
   const [copySuccess, setCopySuccess] = useState("Copy to Clipboard");
 
-  const { SITE_URL } = process.env;
   const shareText = `Check out ${username}'s GitHub profile!`;
   const shareUrl = `${SITE_URL}/profile/${username}`;
 
