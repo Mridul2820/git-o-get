@@ -1,5 +1,5 @@
-import React from 'react';
-import { truncate } from 'lodash';
+import React from "react";
+import { truncate } from "lodash";
 import {
   BarChart,
   Bar,
@@ -8,8 +8,8 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from 'recharts';
-import CustomTooltip from '../reuse/CustomTooltip';
+} from "recharts";
+import CustomTooltip from "../reuse/CustomTooltip";
 
 const MostForked = ({ repos }) => {
   const sortByFork = repos
@@ -18,7 +18,7 @@ const MostForked = ({ repos }) => {
     .slice(0, 4);
 
   const tickFork = (value) => {
-    let roundVal = value > 1000 ? (value / 1000).toFixed(1) + 'k' : value;
+    let roundVal = value > 1000 ? (value / 1000).toFixed(1) + "k" : value;
 
     return roundVal;
   };
@@ -30,12 +30,12 @@ const MostForked = ({ repos }) => {
   };
 
   return (
-    <div className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 p-3 shadow-bs1 rounded-md h-full min-h-[400px] w-full bg-white">
+    <div className="card-item p-3 min-h-[400px]">
       <p className="text-center mb-5 text-xl font-semibold">
         Most Forked Repositories
       </p>
       <ResponsiveContainer
-        className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700"
+        className="dark:bg-dark-color dark:text-white border dark:border-gray-700"
         width="100%"
         height={420}
       >

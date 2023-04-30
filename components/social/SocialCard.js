@@ -1,17 +1,17 @@
-import React from 'react';
-import axios from 'axios';
-import fileDownload from 'js-file-download';
-import { BsFillCloudDownloadFill } from 'react-icons/bs';
-import styled from 'styled-components';
-import SocialShare from './SocialShare';
-import PuffLoader from '../loader/PuffLoader';
-import { motion } from 'framer-motion';
+import React from "react";
+import axios from "axios";
+import fileDownload from "js-file-download";
+import { BsFillCloudDownloadFill } from "react-icons/bs";
+import styled from "styled-components";
+import SocialShare from "./SocialShare";
+import PuffLoader from "../loader/PuffLoader";
+import { motion } from "framer-motion";
 
 const SocialCard = ({ ogImageUrl, username, loading }) => {
   const handleDownload = (url, filename) => {
     axios
       .get(url, {
-        responseType: 'blob',
+        responseType: "blob",
       })
       .then((res) => {
         fileDownload(res.data, filename);
@@ -20,7 +20,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
 
   return (
     <motion.div
-      className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 flex flex-col justify-between gap-4 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[442px] bg-white"
+      className="card-item flex flex-col justify-between gap-4 py-3 px-3 md:px-5 md:min-h-[442px]"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
@@ -40,8 +40,8 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
                 className="object-contain w-full "
               />
               <button
-                className="download bg-purple-500 text-white p-5 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full cursor-pointer"
-                onClick={() => handleDownload(ogImageUrl, username + '.jpg')}
+                className="download bg-purple-500 text-white p-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer"
+                onClick={() => handleDownload(ogImageUrl, username + ".jpg")}
               >
                 <BsFillCloudDownloadFill size={44} />
               </button>

@@ -85,13 +85,11 @@ git clone https://github.com/Mridul2820/git-o-get.git
 
 ```
 GITHUB_TOKEN = <YOUR_GITHUB_TOKEN>
-SITE_URL = <YOUR_URL_FOR_APP>
 CLOUD_NAME = <YOUR_CLOUDINARY_CLOUD_NAME>
 BASE_IMAGE_URL = <URL_FOR_BASE_IMAGE>
 ```
 
 - **`GITHUB_TOKEN`: Get your `Personal Access Token` by signing in to your github account and then go to your setting -> developer setting -> Personal access tokens -> Generate new token**
-- **`SITE_URL`: Your base URL for the app**
 - **`CLOUD_NAME`: Create a [Cloudinary](https://cloudinary.com/users/register/free) account and Get your `CLOUD NAME`**
 - **`BASE_IMAGE_URL`: Upload [Base Image](https://github.com/Mridul2820/git-o-get/blob/main/public/assets/github-social.jpg) in Your Cloudinary Cloud and Get the public Id**
 
@@ -111,4 +109,8 @@ npm run dev
 
 <a href="CONTRIBUTING.md">Contributing Guide</a>
 
-## All the best! 🥇
+## ⭐ Project Contributors
+
+<a href="https://github.com/Mridul2820/git-o-get/graphs/contributors" align="center">
+  <img src="https://contrib.rocks/image?repo=Mridul2820/git-o-get" />
+</a>

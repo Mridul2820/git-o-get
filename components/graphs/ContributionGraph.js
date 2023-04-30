@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   LineChart,
   Line,
@@ -7,8 +7,8 @@ import {
   XAxis,
   ResponsiveContainer,
   CartesianGrid,
-} from 'recharts';
-import CustomTooltip from '../reuse/CustomTooltip';
+} from "recharts";
+import CustomTooltip from "../reuse/CustomTooltip";
 
 const ContributionGraph = ({ weeks, username }) => {
   let contributions = [];
@@ -33,21 +33,21 @@ const ContributionGraph = ({ weeks, username }) => {
   };
 
   return (
-    <div className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 py-3 px-3 md:px-5 shadow-bs1 rounded-md h-full w-full min-h-[400px] bg-white relative">
+    <div className="card-item py-3 px-3 md:px-5 min-h-[400px] mt-5 relative">
       <p className="text-center mb-5 text-xl font-semibold">
         {username}&apos;s Contribution Graph
       </p>
-      <p className="absolute -left-6 top-[50%] -rotate-90 hidden md:block">
+      <p className="absolute -left-6 top-1/2 -rotate-90 hidden md:block">
         Contributions
       </p>
-      <p className="absolute left-[50%] bottom-3 translate-x-[-50%] whitespace-nowrap">
-        Days{' '}
+      <p className="absolute left-1/2 bottom-3 -translate-x-1/2 whitespace-nowrap">
+        Days{" "}
         <span className="font-semibold">
-          {'(' +
+          {"(" +
             contributions[0].date +
-            ' - ' +
+            " - " +
             contributions.slice(-1)[0].date +
-            ')'}
+            ")"}
         </span>
       </p>
       <div className="pb-8 pl-0 md:pl-4">

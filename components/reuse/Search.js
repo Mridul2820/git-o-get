@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { FaSearch, FaSpinner } from 'react-icons/fa';
-import { useRouter } from 'next/router';
+import React, { useContext, useState } from "react";
+import { FaSearch, FaSpinner } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { AppContext } from "../../pages/_app";
 
 const Search = ({ height }) => {
+  const { isLoading, toggleLoading } = useContext(AppContext);
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-
     if (loading) return; // Prevent multiple requests
-    setLoading(true);
 
     const fields = Array.from(event.currentTarget.elements);
-    const username = fields.find((field) => field.name === 'username')?.value;
+    const username = fields.find((field) => field.name === "username")?.value;
 
-    router.push(`/user/${username}`);
+    if (username && !hasWhiteSpaceText(username)) {
+      setLoading(true);
+      toggleLoading(true);
+      router.push(`/user/${username}`);
+    }
+  };
+
+  const hasWhiteSpaceText = (text) => {
+    return /\s/g.test(text);
   };
 
   return (
@@ -32,9 +40,9 @@ const Search = ({ height }) => {
       <button
         aria-label="search"
         type="submit"
-        className="bg-purple-mid text-white h-full px-4 rounded-r-md"
+        className="bg-purple-mid text-white h-full px-2 md:px-4 rounded-r-md"
       >
-        {loading ? (
+        {isLoading ? (
           <div className="animate-spin">
             <FaSpinner />
           </div>

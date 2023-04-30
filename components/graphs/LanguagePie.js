@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
-import { sumBy } from 'lodash';
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { sumBy } from "lodash";
+import { v4 as uuidv4 } from "uuid";
 import {
   PieChart,
   Pie,
@@ -8,8 +9,7 @@ import {
   Cell,
   ResponsiveContainer,
   Tooltip,
-  Legend,
-} from 'recharts';
+} from "recharts";
 
 const LanguagePie = ({ repositories }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,18 +45,18 @@ const LanguagePie = ({ repositories }) => {
   if (allLangs.length >= 5) {
     const mainLangs = allLangs.slice(0, 4);
 
-    const sum_of_other = sumBy(allLangs.slice(4), 'size');
+    const sum_of_other = sumBy(allLangs.slice(4), "size");
 
     formatLangs.push(...mainLangs, {
-      name: 'Others',
-      color: '#bbb',
+      name: "Others",
+      color: "#bbb",
       size: sum_of_other,
     });
   } else {
     formatLangs.push(...allLangs);
   }
 
-  const sum_of_all_values = sumBy(formatLangs, 'size');
+  const sum_of_all_values = sumBy(formatLangs, "size");
 
   const renderActiveShape = ({
     cx,
@@ -94,11 +94,11 @@ const LanguagePie = ({ repositories }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2 dark:bg-dark-gray dark:text-white dark:border dark:border-gray-500">
+        <div className="custom-tooltip backdrop-blur-sm shadow-bs1 bg-slate-50 p-2 dark:bg-dark-gray dark:text-white border dark:border-gray-500">
           {payload[0].name +
-            ': ' +
+            ": " +
             ((payload[0].value * 100) / sum_of_all_values).toFixed(2) +
-            '%'}
+            "%"}
         </div>
       );
     }
@@ -109,12 +109,12 @@ const LanguagePie = ({ repositories }) => {
     return (
       <div className="flex justify-center mb-2">
         <ul className="mx-auto">
-          {formatLangs?.map((entry, index) => (
-            <li key={`item-${index}`} className="flex items-center gap-2">
+          {formatLangs?.map((entry) => (
+            <li key={uuidv4()} className="flex items-center gap-2">
               <div className="h-3 w-3" style={{ background: entry.color }} />
               <span className="text-sm select-none">{entry.name}</span>
               <span>
-                {((entry.size * 100) / sum_of_all_values).toFixed(2) + '%'}
+                {((entry.size * 100) / sum_of_all_values).toFixed(2) + "%"}
               </span>
             </li>
           ))}
@@ -125,7 +125,7 @@ const LanguagePie = ({ repositories }) => {
 
   return (
     <motion.div
-      className="dark:bg-dark-color dark:text-white dark:border dark:border-gray-700 p-3 pb-0 shadow-bs1 rounded-md h-full w-full min-h-[400px] max-w-[380px] bg-white"
+      className="card-item dark:border-gray-700 p-3 pb-0 min-h-[442px] max-w-[380px]"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
@@ -146,7 +146,7 @@ const LanguagePie = ({ repositories }) => {
           >
             {formatLangs.map((entry, index) => (
               <Cell
-                key={`cell-${index}`}
+                key={uuidv4()}
                 fill={entry.color}
                 onMouseOver={() => onPieEnter(index)}
               />

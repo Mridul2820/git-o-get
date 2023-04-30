@@ -1,43 +1,29 @@
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { BiBuildings } from 'react-icons/bi';
-import { IoLocationOutline } from 'react-icons/io5';
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { BsLink45Deg } from 'react-icons/bs';
-import { HiOutlineMail } from 'react-icons/hi';
+import React from "react";
+import { motion } from "framer-motion";
+import { BiBuildings } from "react-icons/bi";
+import { IoLocationOutline } from "react-icons/io5";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { BsLink45Deg } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
 
 const ProfileInfo = ({ user }) => {
-  const setURL = (url) => {
-    if (url.protocol === 'https:') {
-      return url;
-    } else if (url.protocol === 'http:') {
-      return url;
-    } else {
-      return 'https://' + url;
-    }
-  };
-
   return (
     <motion.div
-      className="py-4 px-5 shadow-bs1 rounded-md w-full h-full flex flex-col justify-center bg-white dark:bg-dark-color dark:text-white dark:border dark:border-gray-700"
+      className="card-item py-4 px-5 flex flex-col justify-center"
       transition={{ duration: 1 }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
     >
       <div className="flex items-center gap-3">
-        <Image
+        <img
           src={user.avatarUrl}
           alt={user.login}
-          height={80}
-          width={80}
-          className="rounded-full"
-          priority={true}
+          className="rounded-full h-16 md:h-20 w-16 md:w-20"
         />
         <div className="">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-xl md:text-2xl font-bold">
             <a href={user.url} target="_blank" rel="noreferrer">
-              {'@'}
+              {"@"}
               {user.login}
             </a>
           </h1>
@@ -65,7 +51,7 @@ const ProfileInfo = ({ user }) => {
             <HiOutlineMail size={20} />
             <a
               href={`mailto:${user.email}`}
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 hover:dark:text-white"
             >
               {user.email}
             </a>
@@ -78,21 +64,21 @@ const ProfileInfo = ({ user }) => {
               href={`https://twitter.com/${user.twitterUsername}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
-              {'@'}
+              {"@"}
               {user.twitterUsername}
             </a>
           </div>
         )}
         {user.websiteUrl && (
-          <div className="flex items-center gap-1 mt-2">
+          <div className="flex items-center gap-1 mt-2 dark:text-gray-300">
             <BsLink45Deg size={22} />
             <a
               href={`https://${user.websiteUrl}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:underline hover:text-gray-800"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
             >
               {user.websiteUrl}
             </a>

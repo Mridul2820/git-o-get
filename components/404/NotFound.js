@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
-import { BiArrowBack } from 'react-icons/bi';
+import Link from "next/link";
+import React from "react";
+import { BiArrowBack } from "react-icons/bi";
 
 const NotFound = ({ image, message }) => {
   return (
@@ -11,11 +11,12 @@ const NotFound = ({ image, message }) => {
         className="w-full max-w-[500px]"
       />
       <p className="text-center">{message}</p>
-      <Link href="/">
-        <a className="bg-purple-mid flex justify-center items-center gap-2 text-white px-5 py-2 text-lg rounded-lg">
-          <BiArrowBack />
-          Back to home
-        </a>
+      <Link
+        href="/"
+        className="bg-purple-mid flex justify-center items-center gap-2 text-white px-5 py-2 text-lg rounded-lg"
+      >
+        <BiArrowBack />
+        Back to home
       </Link>
     </div>
   );

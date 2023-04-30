@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-dark-color dark:border-t dark:border-gray-500 p-3 flex justify-center items-center gap-1 flex-col sm:flex-row bg-white">
+    <footer className="card-item border-t p-3 flex justify-center items-center gap-1 flex-col sm:flex-row">
       <span>
         &copy; {new Date().getFullYear()} by
         <a
@@ -16,14 +16,14 @@ const Footer = () => {
         .
       </span>
       <span>
-        Made with ❤ {'& '}
+        Made with ❤ {"& "}
         <a
           className="ml-1 font-semibold"
           href="https://github.com/Mridul2820/git-o-get"
           target="_blank"
           rel="noreferrer"
         >
-          {'<Code/>'}
+          {"<Code/>"}
         </a>
       </span>
     </footer>
