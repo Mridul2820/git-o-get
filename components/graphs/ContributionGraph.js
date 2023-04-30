@@ -37,10 +37,10 @@ const ContributionGraph = ({ weeks, username }) => {
       <p className="text-center mb-5 text-xl font-semibold">
         {username}&apos;s Contribution Graph
       </p>
-      <p className="absolute -left-6 top-[50%] -rotate-90 hidden md:block">
+      <p className="absolute -left-6 top-1/2 -rotate-90 hidden md:block">
         Contributions
       </p>
-      <p className="absolute left-[50%] bottom-3 translate-x-[-50%] whitespace-nowrap">
+      <p className="absolute left-1/2bottom-3 -translate-x-1/2 whitespace-nowrap">
         Days{" "}
         <span className="font-semibold">
           {"(" +

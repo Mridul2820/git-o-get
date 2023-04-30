@@ -40,7 +40,7 @@ const SocialCard = ({ ogImageUrl, username, loading }) => {
                 className="object-contain w-full "
               />
               <button
-                className="download bg-purple-500 text-white p-5 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full cursor-pointer"
+                className="download bg-purple-500 text-white p-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer"
                 onClick={() => handleDownload(ogImageUrl, username + ".jpg")}
               >
                 <BsFillCloudDownloadFill size={44} />
