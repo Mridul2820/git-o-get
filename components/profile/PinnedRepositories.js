@@ -14,7 +14,7 @@ const PinnedRepositories = ({ username, pinnedRepositories }) => {
       </p>
       <div className="flex flex-wrap justify-center gap-4 max-h-[450px] overflow-y-scroll pt-2 pr-5">
         {pinnedRepositories?.nodes.map((repo) => (
-          <RepositoryCard repository={repo} theme={theme} />
+          <RepositoryCard repository={repo} theme={theme} key={repo.id} />
         ))}
       </div>
     </div>
