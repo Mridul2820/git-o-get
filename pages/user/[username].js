@@ -22,8 +22,8 @@ const ProfileNums = dynamic(() =>
 const ProfileFollowers = dynamic(() =>
   import("../../components/profile/ProfileFollowers")
 );
-const ProfilePinnedRepositories = dynamic(() =>
-  import('../../components/profile/ProfilePinnedRepositories')
+const PinnedRepositories = dynamic(() =>
+  import("../../components/profile/PinnedRepositories")
 );
 const ProfileCalendar = dynamic(() =>
   import("../../components/profile/ProfileCalendar")
@@ -116,17 +116,17 @@ const UserName = ({ user, ogImageUrl }) => {
           <MostForked repos={user.repositories?.nodes} />
           <MostStar repos={user.repositories?.nodes} />
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
-          <div className="h-full w-full md:grid-cols-1">
-            <ProfilePinnedRepositories username={user.login} pinnedRepositories={user.pinnedItems} />
-          </div>
-          <div className="h-full w-full md:col-span-2">
-            <ContributionGraph
-              weeks={user.contributionsCollection.contributionCalendar.weeks}
-              username={user.login}
-            />
-          </div>
+        <div className="h-full w-full mt-5">
+          <PinnedRepositories
+            username={user.login}
+            pinnedRepositories={user.pinnedItems}
+          />
+        </div>
+        <div className="h-full w-full mt-5">
+          <ContributionGraph
+            weeks={user.contributionsCollection.contributionCalendar.weeks}
+            username={user.login}
+          />
         </div>
       </main>
     </>
