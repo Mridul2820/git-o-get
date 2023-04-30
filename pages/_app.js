@@ -13,7 +13,7 @@ import SEO from "../next-seo.config";
 import { client } from "../client";
 import { GA_TRACKING_ID } from "../lib/gtag";
 
-import Footer from "../components/footer/Footer";
+import Footer from "../components/layout/Footer";
 import ThemeButton from "../components/themeButton/ThemeButton";
 
 export const AppContext = React.createContext();

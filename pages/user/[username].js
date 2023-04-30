@@ -11,7 +11,7 @@ import { client } from "../../client";
 import { AppContext } from "../_app";
 import { SITE_URL } from "../../constant";
 
-const Navbar = dynamic(() => import("../../components/nav/Navbar"));
+const Navbar = dynamic(() => import("../../components/layout/Navbar"));
 const SocialCard = dynamic(() => import("../../components/social/SocialCard"));
 const ProfileInfo = dynamic(() =>
   import("../../components/profile/ProfileInfo")
