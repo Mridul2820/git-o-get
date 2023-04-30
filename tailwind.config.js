@@ -5,26 +5,67 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    screens: {
+      xm: "350px",
+      // => @media (min-width: 380px) { ... }
+
+      xs: "480px",
+      // => @media (min-width: 480px) { ... }
+
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
+    colors: {
+      transparent: "transparent",
+      black: colors.black,
+      white: colors.white,
+      slate: colors.slate,
+      gray: colors.gray,
+      zinc: colors.zinc,
+      neutral: colors.neutral,
+      stone: colors.stone,
+      red: colors.red,
+      orange: colors.orange,
+      amber: colors.amber,
+      yellow: colors.yellow,
+      lime: colors.lime,
+      green: colors.green,
+      emerald: colors.emerald,
+      teal: colors.teal,
+      cyan: colors.cyan,
+      sky: colors.sky,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      violet: colors.violet,
+      purple: colors.purple,
+      fuchsia: colors.fuchsia,
+      pink: colors.pink,
+      rose: colors.rose,
+      midnight: "#121063",
+      metal: "#565584",
+      tahiti: "#3ab7bf",
+      silver: "#ecebff",
+      bermuda: "#78dcca",
+      "purple-black": "#3a356f",
+      "purple-dark": "#564c89",
+      "purple-mid": "#9a65fd",
+      "purple-lite": "#aa99ff",
+      "dark-color": "#0d1117",
+      "dark-gray": "#161b22",
+    },
     extend: {
-      gridTemplateColumns: {
-        gridcoin: "30px .8fr 50px .5fr .8fr 60px 60px 60px 250px",
-        gridcoinsm: "20px 1.2fr .8fr 40px",
-      },
-      keyframes: {
-        rotate: {
-          "0%": {
-            "-webkit-transform": "rotate(0deg)",
-            transform: "rotate(0deg)",
-          },
-          "100%": {
-            "-webkit-transform": "rotate(360deg)",
-            transform: "rotate(360deg)",
-          },
-        },
-      },
-      animation: {
-        "rotate-slow": "rotate 15s linear infinite",
-      },
       boxShadow: {
         bs1: "0px 10px 36px 0px rgba(0, 0, 0, 0.16), 0px 0px 0px 1px rgba(0, 0, 0, 0.06)",
         bs2: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
@@ -32,24 +73,6 @@ module.exports = {
         bs4: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
         bs5: "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px",
         bs5: "rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
-      },
-      backgroundImage: {
-        "light-blue":
-          "linear-gradient(180deg,rgb(233, 244, 254),rgba(233, 244, 254, .99) 25%, rgba(255, 255, 255, 0))",
-      },
-      backgroundColor: {
-        "purple-black": "rgb(58, 53, 111)",
-        "purple-dark": "rgb(86, 76, 137)",
-        "purple-mid": "rgb(154, 101, 253)",
-        "purple-lite": "rgb(170, 153, 255)",
-      },
-      colors: {
-        "purple-black": "rgb(58, 53, 111)",
-        "purple-dark": "rgb(86, 76, 137)",
-        "purple-mid": "rgb(154, 101, 253)",
-        "purple-lite": "rgb(170, 153, 255)",
-        "dark-color": "#0d1117",
-        "dark-gray": "#161b22",
       },
     },
   },
