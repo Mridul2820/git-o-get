@@ -22,6 +22,9 @@ const ProfileNums = dynamic(() =>
 const ProfileFollowers = dynamic(() =>
   import("../../components/profile/ProfileFollowers")
 );
+const ProfilePinnedRepositories = dynamic(() =>
+  import('../../components/profile/ProfilePinnedRepositories')
+);
 const ProfileCalendar = dynamic(() =>
   import("../../components/profile/ProfileCalendar")
 );
@@ -114,10 +117,17 @@ const UserName = ({ user, ogImageUrl }) => {
           <MostStar repos={user.repositories?.nodes} />
         </div>
 
-        <ContributionGraph
-          weeks={user.contributionsCollection.contributionCalendar.weeks}
-          username={user.login}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
+          <div className="h-full w-full md:grid-cols-1">
+            <ProfilePinnedRepositories username={user.login} pinnedRepositories={user.pinnedItems} />
+          </div>
+          <div className="h-full w-full md:col-span-2">
+            <ContributionGraph
+              weeks={user.contributionsCollection.contributionCalendar.weeks}
+              username={user.login}
+            />
+          </div>
+        </div>
       </main>
     </>
   );
