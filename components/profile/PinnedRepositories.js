@@ -1,6 +1,8 @@
 import React from "react";
-import RepositoryCard from "./GitHubCard";
 import { useTheme } from "next-themes";
+import { v4 as uuidv4 } from "uuid";
+
+import RepositoryCard from "./GitHubCard";
 
 const PinnedRepositories = ({ username, pinnedRepositories }) => {
   const { theme } = useTheme();
@@ -12,9 +14,9 @@ const PinnedRepositories = ({ username, pinnedRepositories }) => {
           {"@"} {username} Pinned Repositories
         </div>
       </p>
-      <div className="flex flex-wrap justify-center gap-4 max-h-[450px] overflow-y-scroll pt-2 pr-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-4 max-h-[450px] overflow-y-scroll pt-2 pr-5">
         {pinnedRepositories?.nodes.map((repo) => (
-          <RepositoryCard repository={repo} theme={theme} key={repo.id} />
+          <RepositoryCard repository={repo} theme={theme} key={uuidv4()} />
         ))}
       </div>
     </div>
