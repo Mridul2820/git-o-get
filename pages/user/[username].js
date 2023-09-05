@@ -2,18 +2,14 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { v2 as cloudinary } from "cloudinary";
 
-// GQL
 import { GET_USER } from "../../graphql/Query";
 import { client } from "../../client";
 
-const NotFound = dynamic(() => import("../../components/404/NotFound"));
 const UserContent = dynamic(() =>
   import("../../components/content/UserContent")
 );
 
 const UserName = ({ user, ogImageUrl }) => {
-  if (user === null) return <NotFound />;
-
   return <UserContent user={user} ogImageUrl={ogImageUrl} />;
 };
 
@@ -29,12 +25,15 @@ export async function getServerSideProps({ params }) {
       username: params.username,
     },
   });
-  const errorCode = null;
+  if (data.user === null) {
+    return {
+      notFound: true,
+    };
+  }
   let user = [];
   if (data.user !== null) {
     user = data.user;
   }
-
   cloudinary.config({
     cloud_name: CLOUD_NAME,
   });
@@ -153,7 +152,6 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      errorCode,
       user: data.user,
       ogImageUrl: cloudinaryUrl,
     },
