@@ -8,8 +8,11 @@ import { client } from "../../client";
 const UserContent = dynamic(() =>
   import("../../components/content/UserContent")
 );
+const NotFound = dynamic(() => import("../../components/404/NotFound"));
 
 const UserName = ({ user, ogImageUrl }) => {
+  if (user === null) return <NotFound />;
+
   return <UserContent user={user} ogImageUrl={ogImageUrl} />;
 };
 
@@ -25,11 +28,6 @@ export async function getServerSideProps({ params }) {
       username: params.username,
     },
   });
-  if (data.user === null) {
-    return {
-      notFound: true,
-    };
-  }
   let user = [];
   if (data.user !== null) {
     user = data.user;
