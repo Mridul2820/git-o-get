@@ -1,8 +1,9 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
-import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 const explicitTheme = {
   light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],

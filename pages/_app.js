@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { RecoilRoot } from "recoil";
@@ -13,8 +14,10 @@ import SEO from "../next-seo.config";
 import { client } from "../client";
 import { GA_TRACKING_ID } from "../lib/gtag";
 
-import Footer from "../components/layout/Footer";
-import ThemeButton from "../components/themeButton/ThemeButton";
+const Footer = dynamic(() => import("../components/layout/Footer"));
+const ThemeButton = dynamic(() =>
+  import("../components/themeButton/ThemeButton")
+);
 
 export const AppContext = React.createContext();
 

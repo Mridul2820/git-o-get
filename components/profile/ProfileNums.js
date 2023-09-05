@@ -1,11 +1,12 @@
 import React from "react";
-import { GoRepo, GoGist } from "react-icons/go";
-import { FiUsers, FiUserPlus } from "react-icons/fi";
-import { AiOutlinePullRequest } from "react-icons/ai";
-import { VscIssues } from "react-icons/vsc";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
+import { BsCodeSquare } from "react-icons/bs";
+import { GoRepo } from "react-icons/go";
+import { FiUsers, FiUserPlus } from "react-icons/fi";
+import { AiOutlinePullRequest } from "react-icons/ai";
+import { VscIssues } from "react-icons/vsc";
 
 const ProfileNums = ({
   followers,
@@ -58,7 +59,7 @@ const ProfileNums = ({
     },
     {
       id: 6,
-      icon: <GoGist size={24} />,
+      icon: <BsCodeSquare size={24} />,
       label: "Gists",
       title: "Total Gists",
       value: total_gists,
