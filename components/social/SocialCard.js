@@ -71,6 +71,32 @@ const CradImage = styled.div`
       visibility: visible;
     }
   }
+
+  position: relative;
+  padding-bottom: calc(630 / 1200 * 100%);
+  animation: placeholder ease-in-out 2s infinite;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+  @keyframes placeholder {
+    0% {
+      background-color: #eee;
+    }
+    50% {
+      background-color: #ccc;
+    }
+    100% {
+      background-color: #eee;
+    }
+  }
 `;
 
 export default SocialCard;
