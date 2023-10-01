@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import { formatDate } from "../../helper/formatDate";
 
 const explicitTheme = {
   light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
@@ -22,9 +23,14 @@ const ProfileCalendar = ({ username }) => {
         <a href={`https://github.com/${username}`}>{"@" + username}</a> on
         GitHub
       </p>
-      <GitHubCalendar username={username} fontSize={18} theme={explicitTheme}>
-        <ReactTooltip delayShow={50} html />
+      <GitHubCalendar username={username} fontSize={18} theme={explicitTheme} renderBlock={(block, activity) =>
+        React.cloneElement(block, {
+          'data-tooltip-id': 'react-tooltip',
+          'data-tooltip-html': `${activity.count} activities on ${formatDate(activity.date)}`,
+        })
+      }>
       </GitHubCalendar>
+      <ReactTooltip id="react-tooltip" />
     </CalenderWrap>
   );
 };
