@@ -22,9 +22,14 @@ const ProfileCalendar = ({ username }) => {
         <a href={`https://github.com/${username}`}>{"@" + username}</a> on
         GitHub
       </p>
-      <GitHubCalendar username={username} fontSize={18} theme={explicitTheme}>
-        <ReactTooltip delayShow={50} html />
+      <GitHubCalendar username={username} fontSize={18} theme={explicitTheme} renderBlock={(block, activity) =>
+        React.cloneElement(block, {
+          'data-tooltip-id': 'react-tooltip',
+          'data-tooltip-html': `${activity.count} activities on ${activity.date}`,
+        })
+      }>
       </GitHubCalendar>
+      <ReactTooltip id="react-tooltip" />
     </CalenderWrap>
   );
 };
