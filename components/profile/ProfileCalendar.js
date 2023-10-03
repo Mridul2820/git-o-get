@@ -5,13 +5,15 @@ import { motion } from "framer-motion";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { formatDate } from "../../helper/formatDate";
+import { useTheme } from "next-themes";
 
 const explicitTheme = {
   light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
-  dark: ["#39d353", "#26a641", "#006d32", "#0e4429", "#161b22"],
+  dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
 };
 
 const ProfileCalendar = ({ username }) => {
+  const { theme } = useTheme();
   return (
     <CalenderWrap
       className="card-item flex flex-col gap-3 items-center p-3"
@@ -23,13 +25,20 @@ const ProfileCalendar = ({ username }) => {
         <a href={`https://github.com/${username}`}>{"@" + username}</a> on
         GitHub
       </p>
-      <GitHubCalendar username={username} fontSize={18} theme={explicitTheme} renderBlock={(block, activity) =>
-        React.cloneElement(block, {
-          'data-tooltip-id': 'react-tooltip',
-          'data-tooltip-html': `${activity.count} activities on ${formatDate(activity.date)}`,
-        })
-      }>
-      </GitHubCalendar>
+      <GitHubCalendar
+        colorScheme={theme}
+        username={username}
+        fontSize={18}
+        theme={explicitTheme}
+        renderBlock={(block, activity) =>
+          React.cloneElement(block, {
+            "data-tooltip-id": "react-tooltip",
+            "data-tooltip-html": `${activity.count} activities on ${formatDate(
+              activity.date
+            )}`,
+          })
+        }
+      ></GitHubCalendar>
       <ReactTooltip id="react-tooltip" />
     </CalenderWrap>
   );
