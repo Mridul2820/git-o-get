@@ -39,7 +39,7 @@ const RepositoryCard = ({ repository, theme }) => {
             {getType()}
           </span>
         </div>
-        <p className="text-xs text-muted-default dark:text-muted-dark mt-2 leading-5">
+        <p className="text-xs text-muted-default line-clamp-3 dark:text-muted-dark mt-2 leading-5">
           {repository?.description}
         </p>
       </div>
