@@ -38,7 +38,7 @@ const SocialShare = ({ username }) => {
   };
 
   const shareText = `Check out ${username}'s GitHub profile!`;
-  const shareUrl = `${SITE_URL}/profile/${username}`;
+  const shareUrl = `${SITE_URL}/user/${username}`;
 
   return (
     <div className="flex justify-center items-center flex-col gap-4 mb-4">
