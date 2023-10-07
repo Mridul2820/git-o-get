@@ -75,7 +75,7 @@ const ProfileInfo = ({ user }) => {
 
         {user.socialAccounts?.nodes?.map((social)=>(
           <div key={social.displayName} className="flex items-center gap-2 mt-2 dark:text-gray-300">
-            <Image alt='logo' width={20} height={20} src={`https://www.google.com/s2/favicons?sz=64&domain_url=${getApexDomain(social.url)}`}/>
+            <img alt='logo' width={20} height={20} src={`https://www.google.com/s2/favicons?sz=64&domain_url=${getApexDomain(social.url)}`}/>
             <a 
               href={social.url}
               target="_blank"

@@ -1,8 +1,8 @@
 export const PreProcessSocialName= (socialobject) =>{
    
-    if(socialobject.url.includes('linkedin') && socialobject.displayName.includes('company/')){
+    if(socialobject.url.includes('linkedin')){
         const newName = socialobject.displayName.split('/')[1]
-        return `in/${newName}`
+        return `${newName}`
     }
 
 
