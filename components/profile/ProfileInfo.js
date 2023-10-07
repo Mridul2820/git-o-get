@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { BiBuildings } from "react-icons/bi";
 import { IoLocationOutline } from "react-icons/io5";
-import { AiOutlineTwitter } from "react-icons/ai";
 import { BsLink45Deg } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
+import { getApexDomain } from "../../helper/getApexDomain";
+import Image from "next/image";
+import { PreProcessSocialName } from "../../helper/utils";
 
 const ProfileInfo = ({ user }) => {
   return (
@@ -57,20 +59,6 @@ const ProfileInfo = ({ user }) => {
             </a>
           </div>
         )}
-        {user.twitterUsername && (
-          <div className="flex items-center gap-1 mt-2 dark:text-gray-300">
-            <AiOutlineTwitter size={20} />
-            <a
-              href={`https://twitter.com/${user.twitterUsername}`}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline hover:text-gray-800 dark:hover:text-white"
-            >
-              {"@"}
-              {user.twitterUsername}
-            </a>
-          </div>
-        )}
         {user.websiteUrl && (
           <div className="flex items-center gap-1 mt-2 dark:text-gray-300">
             <BsLink45Deg size={22} />
@@ -84,6 +72,21 @@ const ProfileInfo = ({ user }) => {
             </a>
           </div>
         )}
+
+        {user.socialAccounts?.nodes?.map((social)=>(
+          <div key={social.displayName} className="flex items-center gap-2 mt-2 dark:text-gray-300">
+            <img alt='logo' width={20} height={20} src={`https://www.google.com/s2/favicons?sz=64&domain_url=${getApexDomain(social.url)}`}/>
+            <a 
+              href={social.url}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline hover:text-gray-800 dark:hover:text-white"
+            >
+              {PreProcessSocialName(social)}
+            </a>
+          </div>
+        ))}
+
       </div>
     </motion.div>
   );
