@@ -11,7 +11,7 @@ module.exports = {
   publicRuntimeConfig: {},
   images: {
     formats: ["image/avif", "image/webp"],
-    domains: ["localhost", "avatars.githubusercontent.com"],
+    domains: ["localhost", "avatars.githubusercontent.com","www.google.com"],
   },
 
   webpack: (config) => {

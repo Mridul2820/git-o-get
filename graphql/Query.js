@@ -11,6 +11,13 @@ export const GET_USER = gql`
       websiteUrl
       location
       company
+      socialAccounts(first: 10) {
+        totalCount
+        nodes {
+          displayName 
+          url
+        }
+      }
       twitterUsername
       email
       following {
